@@ -1,0 +1,4 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+php.kodesolution.com	TRUE	/	FALSE	1999999999	PHPSESSID	b2d35cef5d1c0e1f8e1aa946b11ca8a9
+

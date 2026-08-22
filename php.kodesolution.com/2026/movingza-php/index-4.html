@@ -1,0 +1,4813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>AnQ Movers | For Moving Companies</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+  <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .anq-logo-text {
+      display: inline-flex;
+      align-items: center;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      font-size: 26px;
+      line-height: 1;
+      color: #111;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .main-footer .anq-logo-text {
+      color: #fff;
+      font-size: 30px;
+    }
+
+    .mobile-menu .anq-logo-text,
+    .sticky-header .anq-logo-text {
+      color: #111;
+    }
+
+    .partner-stat-client {
+      min-height: 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 18px 14px;
+    }
+
+    .partner-stat-value {
+      font-size: 34px;
+      font-weight: 900;
+      line-height: 1;
+      color: #111;
+      letter-spacing: -0.05em;
+    }
+
+    .partner-stat-value span {
+      color: #ff5b33;
+    }
+
+    .partner-stat-label {
+      margin-top: 10px;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #777;
+    }
+
+    .partner-card-copy {
+      margin-top: 14px;
+      font-size: 14px;
+      line-height: 1.75;
+      color: #666;
+    }
+
+    .banner-section-three .form-box.partner-form-box .inner-box {
+      max-height: 720px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+    }
+
+    .partner-form-kicker {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #ff5b33;
+      margin-bottom: 4px;
+    }
+
+    .partner-form-copy {
+      margin: 10px 0 18px;
+      color: #666;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .partner-progress {
+      height: 5px;
+      border-radius: 99px;
+      background: #ecebe7;
+      overflow: hidden;
+      margin: 0 0 18px;
+    }
+
+    .partner-progress > span {
+      display: block;
+      height: 100%;
+      width: 50%;
+      background: #ff5b33;
+      transition: width 0.35s ease;
+    }
+
+    .partner-form-step {
+      display: none;
+    }
+
+    .partner-form-step.active {
+      display: block;
+      animation: partnerFade 0.4s ease both;
+    }
+
+    .partner-field-label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #85857f;
+    }
+
+    .partner-form-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .partner-back {
+      border: 0;
+      background: #efeee9;
+      border-radius: 8px;
+      padding: 12px 18px;
+      font-weight: 800;
+    }
+
+    .partner-success {
+      display: none;
+      text-align: center;
+      padding: 28px 8px;
+    }
+
+    .partner-success.active {
+      display: block;
+      animation: partnerFade 0.4s ease both;
+    }
+
+    .partner-success .success-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #16a34a;
+      color: #fff;
+      margin: 0 auto 18px;
+      font-size: 24px;
+    }
+
+    .partner-success h3 {
+      font-size: 30px;
+      line-height: 1.1;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .partner-success p {
+      color: #666;
+      line-height: 1.7;
+    }
+
+    .working-section-three .working-column .inner-column {
+      height: auto !important;
+    }
+
+    .pricing-section-two .features-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .partner-email-panel {
+      max-width: 760px;
+      margin: 34px auto 0;
+      display: flex;
+      gap: 10px;
+      background: #fff;
+      padding: 10px;
+      border-radius: 18px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+    }
+
+    .partner-email-panel input {
+      flex: 1;
+      min-height: 58px;
+      border: 0;
+      padding: 0 18px;
+      outline: 0;
+    }
+
+    .sticky-apply-bar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 999;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(14px);
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.08);
+      padding: 10px 18px;
+      transform: translateY(120%);
+      opacity: 0;
+      transition: 0.35s ease;
+    }
+
+    .sticky-apply-bar.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .sticky-apply-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .sticky-apply-inner p {
+      margin: 0;
+      font-weight: 800;
+      color: #111;
+    }
+
+    @keyframes partnerFade {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .banner-section-three .form-box.partner-form-box .inner-box {
+        max-height: none;
+        overflow: visible;
+      }
+
+      .sticky-apply-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 575px) {
+      .anq-logo-text {
+        font-size: 21px;
+      }
+
+      .partner-email-panel {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="page-wrapper">
+
+  <div class="preloader"></div>
+
+  <!-- Back To Top -->
+  <div class="back-to-top-wrapper">
+    <button id="back_to_top" type="button" class="back-to-top-btn">
+      <svg
+        width="12"
+        height="7"
+        viewBox="0 0 12 7"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M11 6L6 1L1 6"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+  </div>
+
+
+  <!-- Main Header -->
+  <header class="main-header header-style-three">
+
+    <div class="outer-box">
+
+      <div class="header-lower anim-fade-move" data-delay="0.25">
+
+        <div class="inner-container">
+
+          <div class="main-box">
+
+            <div class="logo-box">
+
+              <div class="logo">
+                <a
+                  class="anq-logo-text"
+                  href="index-2.html"
+                >
+                  AnQ MOVERS
+                </a>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="nav-outer">
+
+            <nav class="nav main-menu">
+
+              <ul class="navigation">
+
+                <li>
+                  <a href="index-2.html">
+                    Home
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#how-it-works">
+                    How It Works
+                  </a>
+                </li>
+
+                <li class="current">
+                  <a href="#apply">
+                    For Movers
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#workspace">
+                    Workspace
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#testimonials">
+                    Reviews
+                  </a>
+                </li>
+
+                <li class="dropdown">
+
+                  <a href="#">
+                    Company
+                  </a>
+
+                  <ul>
+
+                    <li>
+                      <a href="index-2.html#about">
+                        About Us
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="#partner-standards">
+                        Partner Standards
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="#contact">
+                        Contact Us
+                      </a>
+                    </li>
+
+                  </ul>
+
+                </li>
+
+              </ul>
+
+            </nav>
+
+          </div>
+
+
+          <div class="right-box">
+
+            <button class="ui-btn search-btn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <a
+              class="theme-btn btn-style-five"
+              href="#apply"
+            >
+              <span class="btn-title">
+                Become an AnQ Partner
+              </span>
+            </a>
+
+            <div class="mobile-nav-toggler">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+
+      <div class="menu-backdrop"></div>
+
+      <nav class="menu-box">
+
+        <div class="upper-box">
+
+          <div class="nav-logo">
+            <a
+              class="anq-logo-text"
+              href="index-2.html"
+            >
+              AnQ MOVERS
+            </a>
+          </div>
+
+          <div class="close-btn">
+            <i class="icon fa fa-times"></i>
+          </div>
+
+        </div>
+
+
+        <ul class="navigation clearfix"></ul>
+
+
+        <ul class="contact-list-one">
+
+          <li>
+
+            <i class="icon fa-regular fa-envelope"></i>
+
+            <span class="title">
+              Partner Enquiries
+            </span>
+
+            <div class="text">
+              <a href="mailto:support@anqmovers.co.uk">
+                support@anqmovers.co.uk
+              </a>
+            </div>
+
+          </li>
+
+        </ul>
+
+
+        <ul class="social-links">
+
+          <li>
+            <a href="#">
+              <i class="icon fab fa-twitter"></i>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <i class="icon fab fa-facebook-f"></i>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <i class="icon fab fa-linkedin-in"></i>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <i class="icon fab fa-youtube"></i>
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+
+
+    <!-- Search -->
+    <div class="search-popup">
+
+      <span class="search-back-drop"></span>
+
+      <button class="close-search">
+        <span class="fa fa-times"></span>
+      </button>
+
+      <div class="search-inner">
+
+        <form method="post" action="#">
+
+          <div class="form-group">
+
+            <input
+              type="search"
+              name="search-field"
+              value=""
+              placeholder="Search..."
+              required=""
+            />
+
+            <button type="submit">
+              <i class="fa fa-search"></i>
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+
+    <!-- Sticky Header -->
+    <div class="sticky-header">
+
+      <div class="auto-container">
+
+        <div class="inner-container">
+
+          <div class="logo">
+            <a
+              class="anq-logo-text"
+              href="index-2.html"
+            >
+              AnQ MOVERS
+            </a>
+          </div>
+
+
+          <div class="nav-outer">
+
+            <nav class="main-menu">
+
+              <div class="navbar-collapse show collapse clearfix">
+
+                <ul class="navigation clearfix"></ul>
+
+              </div>
+
+            </nav>
+
+
+            <div class="mobile-nav-toggler">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+          </div>
+
+
+          <a
+            href="#apply"
+            class="header-phone_box"
+          >
+
+            <span class="icon">
+              <i
+                aria-hidden="true"
+                class="fas fa-handshake"
+              ></i>
+            </span>
+
+            <span class="info">
+
+              For Moving Companies
+
+              <strong>
+                Become a Partner
+              </strong>
+
+            </span>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+  <!-- End Header -->
+
+
+  <!-- Hero -->
+  <section
+    class="banner-section-three"
+    id="apply"
+  >
+
+    <div class="outer-box">
+
+      <div class="shape-2 bounce-y">
+        <img src="images/icons/shape-8.png" alt="">
+      </div>
+
+
+      <ul class="social-info">
+
+        <li>
+          <a href="#">fb</a>
+        </li>
+
+        <li>
+          <a href="#">tw</a>
+        </li>
+
+        <li>
+          <a href="#">in</a>
+        </li>
+
+        <li>
+          <a href="#">yt</a>
+        </li>
+
+      </ul>
+
+
+      <div class="outer-container">
+
+        <div class="shape-1">
+          <img src="images/icons/shape-7.png" alt="">
+        </div>
+
+        <div class="shape-3 bounce-x">
+          <img src="images/icons/shape-9.png" alt="">
+        </div>
+
+
+        <div class="row align-items-start">
+
+
+          <div class="content-column col-xl-7 col-lg-6">
+
+            <div
+              class="inner-column wow fadeInUp"
+              data-wow-delay="200ms"
+            >
+
+              <div class="h1 banner-title">
+
+                More moves.
+                Less marketing.
+
+                <span>
+                  Less admin.
+                </span>
+
+              </div>
+
+
+              <div class="text">
+
+                Grow your removals business with qualified moving enquiries,
+                structured job information and a cleaner quote-to-booking flow.
+
+              </div>
+
+
+              <div class="d-flex flex-wrap gap-3">
+
+                <a
+                  href="#partner-form"
+                  class="theme-btn btn-style-three"
+                >
+                  Become an AnQ Partner
+                  <i class="fa-light fa-arrow-up-right"></i>
+                </a>
+
+                <a
+                  href="#how-it-works"
+                  class="theme-btn btn-style-five"
+                >
+                  See How It Works
+                </a>
+
+              </div>
+
+
+              <div class="row mt-5">
+
+                <div class="col-4">
+
+                  <div class="h3 text-white">
+                    500+
+                  </div>
+
+                  <div class="text">
+                    Verified partners
+                  </div>
+
+                </div>
+
+
+                <div class="col-4">
+
+                  <div class="h3 text-white">
+                    10,000+
+                  </div>
+
+                  <div class="text">
+                    Moves completed
+                  </div>
+
+                </div>
+
+
+                <div class="col-4">
+
+                  <div class="h3 text-white">
+                    4.8/5
+                  </div>
+
+                  <div class="text">
+                    Avg. partner rating
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- Partner Form -->
+          <div class="col-xl-5 col-lg-6">
+
+            <div
+              class="form-box partner-form-box"
+              id="partner-form"
+            >
+
+              <div class="inner-box">
+
+
+                <div id="partnerFormContent">
+
+                  <div class="partner-form-kicker">
+                    Partner application
+                  </div>
+
+
+                  <div
+                    class="h3 title wow fadeInUp"
+                    data-wow-delay="200ms"
+                  >
+                    Become an AnQ Channel Partner.
+                  </div>
+
+
+                  <div class="partner-form-copy">
+
+                    Fill the application here.
+                    Our team will review your details and contact you
+                    if more information is needed.
+
+                  </div>
+
+
+                  <div class="partner-progress">
+                    <span id="partnerProgress"></span>
+                  </div>
+
+
+                  <form
+                    id="anqPartnerForm"
+                    action="#"
+                  >
+
+
+                    <!-- Step 1 -->
+                    <div
+                      class="partner-form-step active"
+                      data-step="1"
+                    >
+
+                      <div class="h5 mb-3">
+                        Business Details
+                      </div>
+
+                      <div class="text mb-3">
+                        Tell us about your business
+                      </div>
+
+
+                      <div class="row gx-3">
+
+
+                        <div class="col-md-6">
+
+                          <div class="form-clt">
+
+                            <label class="partner-field-label">
+                              Legal business name *
+                            </label>
+
+                            <input
+                              type="text"
+                              required
+                              placeholder="Legal business name"
+                            >
+
+                          </div>
+
+                        </div>
+
+
+                        <div class="col-md-6">
+
+                          <div class="form-clt">
+
+                            <label class="partner-field-label">
+                              Trading name *
+                            </label>
+
+                            <input
+                              type="text"
+                              required
+                              placeholder="Trading name"
+                            >
+
+                          </div>
+
+                        </div>
+
+
+                        <div class="col-md-12">
+
+                          <div class="form-clt">
+
+                            <label class="partner-field-label">
+                              Companies House registration number *
+                            </label>
+
+                            <input
+                              type="text"
+                              required
+                              placeholder="Companies House registration number"
+                            >
+
+                          </div>
+
+                        </div>
+
+
+                        <div class="col-md-6">
+
+                          <div class="form-clt">
+
+                            <label class="partner-field-label">
+                              Year established *
+                            </label>
+
+                            <select required>
+
+                              <option value="">
+                                Choose year
+                              </option>
+
+                              <option>2026</option>
+                              <option>2025</option>
+                              <option>2024</option>
+                              <option>2023</option>
+                              <option>2022</option>
+                              <option>2021</option>
+                              <option>2020</option>
+                              <option>2019</option>
+                              <option>2018</option>
+                              <option>2017</option>
+                              <option>2016</option>
+                              <option>2015</option>
+                              <option>2014</option>
+                              <option>2013</option>
+                              <option>2012</option>
+                              <option>2011</option>
+                              <option>2010</option>
+                              <option>2009</option>
+                              <option>2008</option>
+                              <option>2007</option>
+                              <option>2006</option>
+                              <option>2005</option>
+                              <option>2004</option>
+                              <option>2003</option>
+                              <option>2002</option>
+                              <option>2001</option>
+                              <option>2000</option>
+                              <option>1999</option>
+                              <option>1998</option>
+                              <option>1997</option>
+                              <option>1996</option>
+                              <option>1995</option>
+                              <option>1994</option>
+                              <option>1993</option>
+                              <option>1992</option>
+                              <option>1991</option>
+                              <option>1990</option>
+                              <option>1989</option>
+                              <option>1988</option>
+                              <option>1987</option>
+                              <option>1986</option>
+                              <option>1985</option>
+                              <option>1984</option>
+                              <option>1983</option>
+                              <option>1982</option>
+                              <option>1981</option>
+                              <option>1980</option>
+                              <option>1979</option>
+                              <option>1978</option>
+                              <option>1977</option>
+                              <option>1976</option>
+                              <option>1975</option>
+                              <option>1974</option>
+                              <option>1973</option>
+                              <option>1972</option>
+                              <option>1971</option>
+                              <option>1970</option>
+                              <option>1969</option>
+                              <option>1968</option>
+                              <option>1967</option>
+                              <option>1966</option>
+                              <option>1965</option>
+                              <option>1964</option>
+                              <option>1963</option>
+                              <option>1962</option>
+                              <option>1961</option>
+                              <option>1960</option>
+                              <option>1959</option>
+                              <option>1958</option>
+                              <option>1957</option>
+                              <option>1956</option>
+                              <option>1955</option>
+                              <option>1954</option>
+                              <option>1953</option>
+                              <option>1952</option>
+                              <option>1951</option>
+                              <option>1950</option>
+
+                            </select>
+
+                          </div>
+
+                        </div>
+
+
+                        <div class="col-md-6">
+
+                          <div class="form-clt">
+
+                            <label class="partner-field-label">
+                              Website *
+                            </label>
+
+                            <input
+                              type="url"
+                              required
+                              placeholder="Website"
+                            >
+
+                          </div>
+
+                        </div>
+
+
+                        <div class="col-md-12">
+
+                          <div class="form-clt">
+
+                            <label class="partner-field-label">
+                              Registered office address *
+                            </label>
+
+                            <input
+                              type="text"
+                              required
+                              placeholder="Registered office address"
+                            >
+
+                          </div>
+
+                        </div>
+
+
+                        <div class="col-md-12">
+
+                          <div class="form-clt">
+
+                            <label class="partner-field-label">
+                              Trading/operating address *
+                            </label>
+
+                            <input
+                              type="text"
+                              required
+                              placeholder="Trading/operating address"
+                            >
+
+                          </div>
+
+                        </div>
+
+                      </div>
+
+
+                      <div class="partner-form-actions">
+
+                        <span></span>
+
+                        <button
+                          class="theme-btn btn-style-four"
+                          id="partnerContinue"
+                          type="button"
+                        >
+                          Continue
+                        </button>
+
+                      </div>
+
+                    </div>
+
+
+                    <!-- Step 2 -->
+                    <div
+                      class="partner-form-step"
+                      data-step="2"
+                    >
+
+                      <div class="h5 mb-3">
+                        Primary Contact
+                      </div>
+
+                      <div class="text mb-3">
+                        Who should we contact?
+                      </div>
+
+
+                      <div class="row gx-3">
+
+
+                        <div class="col-md-6">
+
+                          <div class="form-clt">
+
+                            <label class="partner-field-label">
+                              First name *
+                            </label>
+
+                            <input
+                              type="text"
+                              required
+                              placeholder="First name"
+                            >
+
+                          </div>
+
+                        </div>
+
+
+                        <div class="col-md-6">
+
+                          <div class="form-clt">
+
+                            <label class="partner-field-label">
+                              Last name *
+                            </label>
+
+                            <input
+                              type="text"
+                              required
+                              placeholder="Last name"
+                            >
+
+                          </div>
+
+                        </div>
+
+
+                        <div class="col-md-12">
+
+                          <div class="form-clt">
+
+                            <label class="partner-field-label">
+                              Position / designation *
+                            </label>
+
+                            <input
+                              type="text"
+                              required
+                              placeholder="Position / designation"
+                            >
+
+                          </div>
+
+                        </div>
+
+
+                        <div class="col-md-6">
+
+                          <div class="form-clt">
+
+                            <label class="partner-field-label">
+                              Email *
+                            </label>
+
+                            <input
+                              type="email"
+                              required
+                              placeholder="Email"
+                            >
+
+                          </div>
+
+                        </div>
+
+
+                        <div class="col-md-6">
+
+                          <div class="form-clt">
+
+                            <label class="partner-field-label">
+                              Mobile number *
+                            </label>
+
+                            <input
+                              type="tel"
+                              required
+                              placeholder="Mobile number"
+                            >
+
+                          </div>
+
+                        </div>
+
+
+                        <div class="col-md-12">
+
+                          <div class="form-clt">
+
+                            <label class="partner-field-label">
+                              Alternative contact name
+                            </label>
+
+                            <input
+                              type="text"
+                              placeholder="Alternative contact name"
+                            >
+
+                          </div>
+
+                        </div>
+
+                      </div>
+
+
+                      <div class="partner-form-actions">
+
+                        <button
+                          class="partner-back"
+                          id="partnerBack"
+                          type="button"
+                        >
+                          Back
+                        </button>
+
+                        <button
+                          class="theme-btn btn-style-four"
+                          type="submit"
+                        >
+                          Submit application
+                        </button>
+
+                      </div>
+
+                    </div>
+
+                  </form>
+
+                </div>
+
+
+                <!-- Success -->
+                <div
+                  class="partner-success"
+                  id="partnerSuccess"
+                >
+
+                  <div class="success-icon">
+                    <i class="fa-solid fa-check"></i>
+                  </div>
+
+                  <h3>
+                    Application Received
+                  </h3>
+
+                  <p>
+                    Thank you for applying to become an AnQ Channel Partner.
+                  </p>
+
+                  <p>
+                    Our Team will review your application.
+                    We may contact you if additional information is required.
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      class="bg-video"
+    >
+      <source
+        src="images/resource/banner3-1.mp4"
+        type="video/mp4"
+      >
+    </video>
+
+  </section>
+  <!-- End Hero -->
+
+
+  <!-- Partner Stats -->
+  <section class="clients-section">
+
+    <div
+      class="outer-container wow fadeInUp"
+      data-wow-delay="400ms"
+    >
+
+      <div class="outer-box">
+
+        <div class="swiper-container">
+
+          <div class="swiper clients-swiper-one pb-0">
+
+            <div class="swiper-wrapper">
+
+
+              <div class="swiper-slide">
+
+                <div class="client-block">
+
+                  <div class="inner-box">
+
+                    <div class="partner-stat-client">
+
+                      <div class="partner-stat-value">
+                        500<span>+</span>
+                      </div>
+
+                      <div class="partner-stat-label">
+                        Verified partners
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div class="swiper-slide">
+
+                <div class="client-block">
+
+                  <div class="inner-box">
+
+                    <div class="partner-stat-client">
+
+                      <div class="partner-stat-value">
+                        10,000<span>+</span>
+                      </div>
+
+                      <div class="partner-stat-label">
+                        Moves completed
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div class="swiper-slide">
+
+                <div class="client-block">
+
+                  <div class="inner-box">
+
+                    <div class="partner-stat-client">
+
+                      <div class="partner-stat-value">
+                        4.8<span>/5</span>
+                      </div>
+
+                      <div class="partner-stat-label">
+                        Avg. partner rating
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div class="swiper-slide">
+
+                <div class="client-block">
+
+                  <div class="inner-box">
+
+                    <div class="partner-stat-client">
+
+                      <div class="partner-stat-value">
+                        500<span>+</span>
+                      </div>
+
+                      <div class="partner-stat-label">
+                        Verified partners
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div class="swiper-slide">
+
+                <div class="client-block">
+
+                  <div class="inner-box">
+
+                    <div class="partner-stat-client">
+
+                      <div class="partner-stat-value">
+                        10,000<span>+</span>
+                      </div>
+
+                      <div class="partner-stat-label">
+                        Moves completed
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div class="swiper-slide">
+
+                <div class="client-block">
+
+                  <div class="inner-box">
+
+                    <div class="partner-stat-client">
+
+                      <div class="partner-stat-value">
+                        4.8<span>/5</span>
+                      </div>
+
+                      <div class="partner-stat-label">
+                        Avg. partner rating
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Problem Section -->
+  <section
+    class="about-section-three"
+    id="problem"
+  >
+
+    <div class="auto-container">
+
+      <div class="row align-items-center">
+
+
+        <div class="image-column col-xl-6">
+
+          <div class="inner-column">
+
+            <div class="images-box">
+
+              <div class="icon-box">
+
+                <div class="icon-one">
+                  <img src="images/icons/about3-1.png" alt="">
+                </div>
+
+                <div class="icon-two">
+                  <img src="images/icons/about3-2.png" alt="">
+                </div>
+
+              </div>
+
+
+              <div
+                class="image wow fadeInUp"
+                data-wow-delay="200ms"
+              >
+
+                <img
+                  src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1400&q=90"
+                  alt="Moving business"
+                >
+
+              </div>
+
+
+              <div
+                class="image two wow fadeInUp"
+                data-wow-delay="400ms"
+              >
+
+                <img
+                  src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1400&q=90"
+                  alt="Moving boxes"
+                >
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div
+          class="content-column col-xl-6 col-lg-10 wow fadeInUp"
+          data-wow-delay="600ms"
+        >
+
+          <div class="inner-column">
+
+            <div class="sec-title">
+
+              <div class="h6 sub-title">
+                Before AnQ
+              </div>
+
+              <div class="h2 title">
+
+                Lead generation should not
+
+                <span>
+                  eat your whole week.
+                </span>
+
+              </div>
+
+              <div class="text">
+                Money goes out before bookings come in.
+              </div>
+
+            </div>
+
+
+            <div class="content-box">
+
+              <div class="inner-box">
+
+                <div class="content">
+
+                  <ul class="list-style-three">
+
+                    <li>
+                      <i class="icon fa-solid fa-check"></i>
+                      <span>Ad spend — £2,000</span>
+                    </li>
+
+                    <li>
+                      <i class="icon fa-solid fa-check"></i>
+                      <span>Raw leads — 80</span>
+                    </li>
+
+                    <li>
+                      <i class="icon fa-solid fa-check"></i>
+                      <span>Qualified moves — Few</span>
+                    </li>
+
+                    <li>
+                      <i class="icon fa-solid fa-check"></i>
+                      <span>Admin time — High</span>
+                    </li>
+
+                  </ul>
+
+
+                  <a
+                    href="#how-it-works"
+                    class="theme-btn btn-style-three"
+                  >
+                    See the smoother flow
+                    <i class="fa-light fa-arrow-up-right"></i>
+                  </a>
+
+                </div>
+
+
+                <div class="image">
+
+                  <img
+                    src="images/resource/about3-3.jpg"
+                    alt="Moving operations"
+                  >
+
+                  <a
+                    class="video"
+                    href="#how-it-works"
+                  >
+                    <i class="fa-solid fa-arrow-down"></i>
+                  </a>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div class="row mt-4">
+
+
+              <div class="col-md-4 mb-3">
+
+                <div class="p-3 h-100 border rounded-3">
+
+                  <div class="h6">
+                    High spend
+                  </div>
+
+                  <div class="h5 mt-2">
+                    Marketing spend keeps rising
+                  </div>
+
+                  <div class="text mt-2">
+
+                    Paid ads, directories and lead-generation campaigns can
+                    drain budget before a confirmed booking arrives.
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div class="col-md-4 mb-3">
+
+                <div class="p-3 h-100 border rounded-3">
+
+                  <div class="h6">
+                    Admin load
+                  </div>
+
+                  <div class="h5 mt-2">
+                    Office teams repeat the same work
+                  </div>
+
+                  <div class="text mt-2">
+
+                    Calls, missing details, quote follow-ups and customer
+                    chasing take time away from confirmed moves.
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div class="col-md-4 mb-3">
+
+                <div class="p-3 h-100 border rounded-3">
+
+                  <div class="h6">
+                    Uneven flow
+                  </div>
+
+                  <div class="h5 mt-2">
+                    Pipeline feels unpredictable
+                  </div>
+
+                  <div class="text mt-2">
+
+                    Some weeks are overloaded.
+                    Other weeks feel quiet,
+                    making planning and staffing harder.
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Workspace -->
+  <section
+    class="services-section-four"
+    id="workspace"
+  >
+
+    <div class="outer-box">
+
+      <div class="auto-container">
+
+        <div class="sec-title text-center style-two">
+
+          <div
+            class="h6 sub-title wow fadeInUp"
+            data-wow-delay="200ms"
+          >
+            Partner dashboard
+          </div>
+
+          <div
+            class="h2 title wow fadeInUp"
+            data-wow-delay="400ms"
+          >
+
+            Your moving business.
+
+            <br>
+
+            <span>
+              One simple workspace.
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="row">
+
+
+          <div
+            class="service-block-five col-xl-4 col-md-6 wow fadeInUp"
+            data-wow-delay="200ms"
+          >
+
+            <div class="inner-block">
+
+              <div class="icon">
+                <img src="images/icons/service5-1.png" alt="">
+              </div>
+
+              <div class="h4 title">
+                <a href="#workspace">
+                  Enquiries
+                </a>
+              </div>
+
+              <div class="partner-card-copy">
+                Relevant opportunities in one place.
+              </div>
+
+              <div class="image-box">
+
+                <div class="image one">
+                  <img
+                    src="images/resource/service5-1.jpg"
+                    alt="Enquiries"
+                  >
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="service-block-five col-xl-4 col-md-6 wow fadeInUp"
+            data-wow-delay="350ms"
+          >
+
+            <div class="inner-block style-two">
+
+              <div class="icon">
+                <img src="images/icons/service5-2.png" alt="">
+              </div>
+
+              <div class="h4 title">
+                <a href="#workspace">
+                  Messages
+                </a>
+              </div>
+
+              <div class="partner-card-copy">
+                Customer conversations stay organised.
+              </div>
+
+              <div class="image-box">
+
+                <div class="image two">
+                  <img
+                    src="images/resource/service5-2.jpg"
+                    alt="Messages"
+                  >
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="service-block-five col-xl-4 col-md-6 wow fadeInUp"
+            data-wow-delay="500ms"
+          >
+
+            <div class="inner-block">
+
+              <div class="icon">
+                <img src="images/icons/service5-3.png" alt="">
+              </div>
+
+              <div class="h4 title">
+                <a href="#workspace">
+                  Job details
+                </a>
+              </div>
+
+              <div class="partner-card-copy">
+                Route, inventory and access notes together.
+              </div>
+
+              <div class="image-box">
+
+                <div class="image three">
+                  <img
+                    src="images/resource/service5-3.jpg"
+                    alt="Job details"
+                  >
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="service-block-five col-xl-4 col-md-6 wow fadeInUp"
+            data-wow-delay="650ms"
+          >
+
+            <div class="inner-block style-two">
+
+              <div class="icon">
+                <img src="images/icons/service5-4.png" alt="">
+              </div>
+
+              <div class="h4 title">
+                <a href="#workspace">
+                  Bookings
+                </a>
+              </div>
+
+              <div class="partner-card-copy">
+                Know what is coming next.
+              </div>
+
+              <div class="image-box">
+
+                <div class="image four">
+                  <img
+                    src="images/resource/service5-4.jpg"
+                    alt="Bookings"
+                  >
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="service-block-five col-xl-4 col-md-6 wow fadeInUp"
+            data-wow-delay="800ms"
+          >
+
+            <div class="inner-block">
+
+              <div class="icon">
+                <img src="images/icons/service5-2.png" alt="">
+              </div>
+
+              <div class="h4 title">
+                <a href="#workspace">
+                  Performance
+                </a>
+              </div>
+
+              <div class="partner-card-copy">
+                Reviews and response quality stay visible.
+              </div>
+
+              <div class="image-box">
+
+                <div class="image one">
+                  <img
+                    src="images/resource/service5-2.jpg"
+                    alt="Performance"
+                  >
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="service-block-five col-xl-4 col-md-6 wow fadeInUp"
+            data-wow-delay="950ms"
+          >
+
+            <div class="inner-block style-two">
+
+              <div class="icon">
+                <img src="images/icons/service5-3.png" alt="">
+              </div>
+
+              <div class="h4 title">
+                <a href="#workspace">
+                  Insights
+                </a>
+              </div>
+
+              <div class="partner-card-copy">
+                Understand enquiries, quotes and wins.
+              </div>
+
+              <div class="image-box">
+
+                <div class="image two">
+                  <img
+                    src="images/resource/service5-3.jpg"
+                    alt="Insights"
+                  >
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="btn-box text-center col-lg-12 wow fadeInUp"
+            data-wow-delay="900ms"
+          >
+
+            <a
+              href="#partner-dashboard"
+              class="theme-btn btn-style-three"
+            >
+              See Partner Dashboard
+              <i class="fa-light fa-arrow-up-right"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- How It Works -->
+  <section
+    class="working-section-three"
+    id="how-it-works"
+  >
+
+    <div class="auto-container">
+
+      <div class="row">
+
+
+        <div class="content-column col-xl-5">
+
+          <div
+            class="inner-column wow fadeInUp"
+            data-wow-delay="200ms"
+          >
+
+            <div class="sec-title">
+
+              <div class="h6 sub-title">
+                How It Works
+              </div>
+
+              <div class="h2 title">
+
+                A smoother flow from opportunity to
+
+                <span>
+                  booked move.
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div class="images-box">
+
+              <div class="image">
+
+                <img
+                  src="images/resource/work3-1.jpg"
+                  alt="Partner move flow"
+                >
+
+              </div>
+
+              <a
+                class="video"
+                href="#apply"
+              >
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="working-column col-xl-7">
+
+          <div
+            class="inner-column wow fadeInUp"
+            data-wow-delay="400ms"
+          >
+
+
+            <div class="working-block-three">
+
+              <div class="inner-block">
+
+                <div class="step">
+
+                  <div class="working-count">
+                    <span>01</span>
+                  </div>
+
+                </div>
+
+                <div class="content">
+
+                  <div class="h4 working-title">
+                    Get matched
+                  </div>
+
+                  <div class="text">
+                    Tell us where you operate and what move types you handle.
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div class="working-block-three">
+
+              <div class="inner-block">
+
+                <div class="step">
+
+                  <div class="working-count">
+                    <span>02</span>
+                  </div>
+
+                </div>
+
+                <div class="content">
+
+                  <div class="h4 working-title">
+                    Receive enquiries
+                  </div>
+
+                  <div class="text">
+
+                    Relevant customer opportunities arrive with
+                    structured move information.
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div class="working-block-three">
+
+              <div class="inner-block">
+
+                <div class="step">
+
+                  <div class="working-count">
+                    <span>03</span>
+                  </div>
+
+                </div>
+
+                <div class="content">
+
+                  <div class="h4 working-title">
+                    Quote clearly
+                  </div>
+
+                  <div class="text">
+
+                    Review the move,
+                    add your price and submit your quotation through AnQ.
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div class="working-block-three">
+
+              <div class="inner-block">
+
+                <div class="step">
+
+                  <div class="working-count">
+                    <span>04</span>
+                  </div>
+
+                </div>
+
+                <div class="content">
+
+                  <div class="h4 working-title">
+                    Win the job
+                  </div>
+
+                  <div class="text">
+
+                    The customer compares movers and chooses
+                    the right company for their move.
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div class="working-block-three">
+
+              <div class="inner-block">
+
+                <div class="step">
+
+                  <div class="working-count">
+                    <span>05</span>
+                  </div>
+
+                </div>
+
+                <div class="content mb-0">
+
+                  <div class="h4 working-title">
+                    Move & get paid
+                  </div>
+
+                  <div class="text">
+
+                    Complete the move and receive the agreed balance
+                    directly from the customer.
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Gallery -->
+  <section class="project-section-two">
+
+    <div class="outer-container">
+
+      <div class="auto-container">
+
+        <div class="sec-title-box">
+
+          <div class="sec-title light">
+
+            <div class="h6 sub-title">
+              Better Opportunities
+            </div>
+
+            <div class="h2 title">
+
+              Qualified enquiries.
+              Clear details.
+
+              <span>
+                Real bookings.
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <a
+            href="#apply"
+            class="theme-btn btn-style-three"
+          >
+            Become a Partner
+            <i class="fa-light fa-arrow-up-right"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="outer-box">
+
+
+        <div
+          class="project-block-two active wow fadeInUp"
+          data-wow-delay="200ms"
+        >
+
+          <div class="inner-block">
+
+            <div class="image">
+
+              <img
+                src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1400&q=90"
+                alt="Qualified enquiries"
+              >
+
+            </div>
+
+            <div class="content">
+
+              <div class="title-box">
+
+                <div class="h4 title">
+                  <a href="#workspace">
+                    Qualified enquiries
+                  </a>
+                </div>
+
+                <div class="excerpt">
+                  Customer ready to quote
+                </div>
+
+              </div>
+
+              <div class="btn-view-details">
+
+                <a href="#workspace">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div
+          class="project-block-two wow fadeInUp"
+          data-wow-delay="400ms"
+        >
+
+          <div class="inner-block">
+
+            <div class="image">
+
+              <img
+                src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1400&q=90"
+                alt="Structured details"
+              >
+
+            </div>
+
+            <div class="content">
+
+              <div class="title-box">
+
+                <div class="h4 title">
+                  <a href="#workspace">
+                    Structured details
+                  </a>
+                </div>
+
+                <div class="excerpt">
+                  Inventory and access notes
+                </div>
+
+              </div>
+
+              <div class="btn-view-details">
+
+                <a href="#workspace">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div
+          class="project-block-two wow fadeInUp"
+          data-wow-delay="600ms"
+        >
+
+          <div class="inner-block">
+
+            <div class="image">
+
+              <img
+                src="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1400&q=90"
+                alt="Real bookings"
+              >
+
+            </div>
+
+            <div class="content">
+
+              <div class="title-box">
+
+                <div class="h4 title">
+                  <a href="#workspace">
+                    Real bookings
+                  </a>
+                </div>
+
+                <div class="excerpt">
+                  Move day confidence
+                </div>
+
+              </div>
+
+              <div class="btn-view-details">
+
+                <a href="#workspace">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Quote Details & Partner Standards -->
+  <section
+    class="pricing-section-two"
+    id="partner-standards"
+  >
+
+    <div class="auto-container">
+
+      <div class="sec-title text-center">
+
+        <div class="h6 sub-title">
+          Better information
+        </div>
+
+        <div class="h2 title">
+
+          Quote with confidence
+
+          <br>
+
+          <span>
+            before you commit.
+          </span>
+
+        </div>
+
+
+        <div class="text">
+
+          AnQ helps customers provide the important move details upfront,
+          so your team can understand the job faster.
+
+        </div>
+
+      </div>
+
+
+      <div class="default-tabs tabs-box mb-0">
+
+
+        <div
+          class="tab-btns tab-buttons wow fadeInUp"
+          data-wow-delay="300ms"
+        >
+
+          <button
+            data-tab="#prod-quote-details"
+            class="tab-btn one active-btn"
+          >
+            Quote Details
+          </button>
+
+          <span></span>
+
+          <button
+            data-tab="#prod-partner-standards"
+            class="tab-btn"
+          >
+            Partner Standards
+          </button>
+
+        </div>
+
+
+        <div class="tabs-content">
+
+
+          <!-- Quote Details -->
+          <div
+            class="tab active-tab"
+            id="prod-quote-details"
+          >
+
+            <div class="tab-inner-content">
+
+              <div class="pricing-outer">
+
+                <div class="row gx-4">
+
+
+                  <div
+                    class="pricing-block-two col-xl-4 col-md-6 wow fadeInUp"
+                    data-wow-delay="200ms"
+                  >
+
+                    <div class="inner-block">
+
+                      <div class="catagory">
+                        Move basics
+                      </div>
+
+                      <div class="price-box">
+                        <span>03</span> items
+                      </div>
+
+                      <div class="text">
+
+                        Structured information that helps your team
+                        work with more confidence.
+
+                      </div>
+
+
+                      <ul class="features-list">
+
+                        <li>
+                          <i class="fa-solid fa-check"></i>
+                          Moving date
+                        </li>
+
+                        <li>
+                          <i class="fa-solid fa-check"></i>
+                          Pickup postcode
+                        </li>
+
+                        <li>
+                          <i class="fa-solid fa-check"></i>
+                          Delivery postcode
+                        </li>
+
+                      </ul>
+
+
+                      <a
+                        href="#apply"
+                        class="theme-btn btn-style-three"
+                      >
+                        Become a Partner
+                        <i class="fa-light fa-arrow-up-right"></i>
+                      </a>
+
+                    </div>
+
+                  </div>
+
+
+                  <div
+                    class="pricing-block-two col-xl-4 col-md-6 wow fadeInUp"
+                    data-wow-delay="400ms"
+                  >
+
+                    <div class="inner-block active">
+
+                      <div class="catagory">
+                        Property & access
+                      </div>
+
+                      <div class="price-box">
+                        <span>03</span> items
+                      </div>
+
+                      <div class="text">
+
+                        Structured information that helps your team
+                        work with more confidence.
+
+                      </div>
+
+
+                      <ul class="features-list">
+
+                        <li>
+                          <i class="fa-solid fa-check"></i>
+                          Property type
+                        </li>
+
+                        <li>
+                          <i class="fa-solid fa-check"></i>
+                          Property size
+                        </li>
+
+                        <li>
+                          <i class="fa-solid fa-check"></i>
+                          Floors and lift access
+                        </li>
+
+                      </ul>
+
+
+                      <a
+                        href="#apply"
+                        class="theme-btn btn-style-three"
+                      >
+                        Become a Partner
+                        <i class="fa-light fa-arrow-up-right"></i>
+                      </a>
+
+                    </div>
+
+                  </div>
+
+
+                  <div
+                    class="pricing-block-two col-xl-4 col-md-6 wow fadeInUp"
+                    data-wow-delay="600ms"
+                  >
+
+                    <div class="inner-block">
+
+                      <div class="catagory">
+                        Inventory & media
+                      </div>
+
+                      <div class="price-box">
+                        <span>03</span> items
+                      </div>
+
+                      <div class="text">
+
+                        Structured information that helps your team
+                        work with more confidence.
+
+                      </div>
+
+
+                      <ul class="features-list">
+
+                        <li>
+                          <i class="fa-solid fa-check"></i>
+                          Inventory
+                        </li>
+
+                        <li>
+                          <i class="fa-solid fa-check"></i>
+                          Packing requirements
+                        </li>
+
+                        <li>
+                          <i class="fa-solid fa-check"></i>
+                          Photos/videos where available
+                        </li>
+
+                      </ul>
+
+
+                      <a
+                        href="#apply"
+                        class="theme-btn btn-style-three"
+                      >
+                        Become a Partner
+                        <i class="fa-light fa-arrow-up-right"></i>
+                      </a>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- Standards -->
+          <div
+            class="tab"
+            id="prod-partner-standards"
+          >
+
+            <div class="tab-inner-content">
+
+              <div class="pricing-outer">
+
+                <div class="row gx-4">
+
+
+                  <div
+                    class="pricing-block-two col-xl-4 col-md-6 wow fadeInUp"
+                    data-wow-delay="200ms"
+                  >
+
+                    <div class="inner-block">
+
+                      <div class="catagory">
+                        Trust & verification
+                      </div>
+
+                      <div class="price-box">
+                        <span>03</span> items
+                      </div>
+
+                      <div class="text">
+                        Standards for the AnQ partner network.
+                      </div>
+
+                      <ul class="features-list">
+
+                        <li>
+                          <i class="fa-solid fa-check"></i>
+                          Verification
+                        </li>
+
+                        <li>
+                          <i class="fa-solid fa-check"></i>
+                          Insurance evidence
+                        </li>
+
+                        <li>
+                          <i class="fa-solid fa-check"></i>
+                          Partner standards
+                        </li>
+
+                      </ul>
+
+                      <a
+                        href="#apply"
+                        class="theme-btn btn-style-three"
+                      >
+                        Become a Partner
+                        <i class="fa-light fa-arrow-up-right"></i>
+                      </a>
+
+                    </div>
+
+                  </div>
+
+
+                  <div
+                    class="pricing-block-two col-xl-4 col-md-6 wow fadeInUp"
+                    data-wow-delay="400ms"
+                  >
+
+                    <div class="inner-block active">
+
+                      <div class="catagory">
+                        Service standards
+                      </div>
+
+                      <div class="price-box">
+                        <span>03</span> items
+                      </div>
+
+                      <div class="text">
+                        Standards for the AnQ partner network.
+                      </div>
+
+                      <ul class="features-list">
+
+                        <li>
+                          <i class="fa-solid fa-check"></i>
+                          Service Level Agreement
+                        </li>
+
+                        <li>
+                          <i class="fa-solid fa-check"></i>
+                          Partner Code of Conduct
+                        </li>
+
+                        <li>
+                          <i class="fa-solid fa-check"></i>
+                          Performance monitoring
+                        </li>
+
+                      </ul>
+
+                      <a
+                        href="#apply"
+                        class="theme-btn btn-style-three"
+                      >
+                        Become a Partner
+                        <i class="fa-light fa-arrow-up-right"></i>
+                      </a>
+
+                    </div>
+
+                  </div>
+
+
+                  <div
+                    class="pricing-block-two col-xl-4 col-md-6 wow fadeInUp"
+                    data-wow-delay="600ms"
+                  >
+
+                    <div class="inner-block">
+
+                      <div class="catagory">
+                        Support & competition
+                      </div>
+
+                      <div class="price-box">
+                        <span>02</span> items
+                      </div>
+
+                      <div class="text">
+                        Standards for the AnQ partner network.
+                      </div>
+
+                      <ul class="features-list">
+
+                        <li>
+                          <i class="fa-solid fa-check"></i>
+                          Customer support
+                        </li>
+
+                        <li>
+                          <i class="fa-solid fa-check"></i>
+                          Fair competition
+                        </li>
+
+                      </ul>
+
+                      <a
+                        href="#apply"
+                        class="theme-btn btn-style-three"
+                      >
+                        Become a Partner
+                        <i class="fa-light fa-arrow-up-right"></i>
+                      </a>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="text-center mt-5 wow fadeInUp"
+        data-wow-delay="400ms"
+      >
+
+        <div class="h3">
+          Better information creates better quotes.
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Operations -->
+  <section class="team-section-three">
+
+    <div class="outer-box">
+
+      <div class="auto-container">
+
+        <div class="sec-title-box">
+
+          <div class="sec-title style-two">
+
+            <div class="h6 sub-title">
+              Better operations
+            </div>
+
+            <div class="h2 title">
+
+              Less chasing.
+              More closing.
+
+              <span>
+                Better operations.
+              </span>
+
+            </div>
+
+            <div class="text">
+
+              AnQ helps reduce repetitive work around enquiries,
+              customer information,
+              quote preparation,
+              follow-ups,
+              customer communication,
+              booking details and job coordination.
+
+            </div>
+
+          </div>
+
+
+          <a
+            href="#apply"
+            class="theme-btn btn-style-three"
+          >
+            Become an AnQ Partner
+            <i class="fa-light fa-arrow-up-right"></i>
+          </a>
+
+        </div>
+
+
+        <div class="row gx-4">
+
+
+          <div
+            class="team-block-three col-xl-3 col-md-6 wow fadeInUp"
+            data-wow-delay="200ms"
+          >
+
+            <div class="inner-block">
+
+              <div class="images-box">
+
+                <div class="shape-1">
+                  <img src="images/icons/shape-10.png" alt="">
+                </div>
+
+                <div class="image">
+
+                  <img
+                    src="images/resource/team3-1.jpg"
+                    alt="Customer communication"
+                  >
+
+                  <img
+                    src="images/resource/team3-1.jpg"
+                    alt="Customer communication"
+                  >
+
+                </div>
+
+              </div>
+
+
+              <div class="content-box">
+
+                <div class="h4 name">
+
+                  <a href="#workspace">
+                    Customer communication
+                  </a>
+
+                </div>
+
+                <div class="designation">
+                  Customer conversations stay visible and organised.
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="team-block-three col-xl-3 col-md-6 wow fadeInUp"
+            data-wow-delay="400ms"
+          >
+
+            <div class="inner-block">
+
+              <div class="images-box">
+
+                <div class="shape-1">
+                  <img src="images/icons/shape-10.png" alt="">
+                </div>
+
+                <div class="image">
+
+                  <img
+                    src="images/resource/team3-2.jpg"
+                    alt="Quote preparation"
+                  >
+
+                  <img
+                    src="images/resource/team3-2.jpg"
+                    alt="Quote preparation"
+                  >
+
+                </div>
+
+              </div>
+
+
+              <div class="content-box">
+
+                <div class="h4 name">
+
+                  <a href="#workspace">
+                    Quote preparation
+                  </a>
+
+                </div>
+
+                <div class="designation">
+                  Structured move information supports faster quotation preparation.
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="team-block-three col-xl-3 col-md-6 wow fadeInUp"
+            data-wow-delay="600ms"
+          >
+
+            <div class="inner-block">
+
+              <div class="images-box">
+
+                <div class="shape-1">
+                  <img src="images/icons/shape-10.png" alt="">
+                </div>
+
+                <div class="image">
+
+                  <img
+                    src="images/resource/team3-3.jpg"
+                    alt="Booking coordination"
+                  >
+
+                  <img
+                    src="images/resource/team3-3.jpg"
+                    alt="Booking coordination"
+                  >
+
+                </div>
+
+              </div>
+
+
+              <div class="content-box">
+
+                <div class="h4 name">
+
+                  <a href="#workspace">
+                    Booking coordination
+                  </a>
+
+                </div>
+
+                <div class="designation">
+                  Keep confirmed booking details and what comes next in view.
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="team-block-three col-xl-3 col-md-6 wow fadeInUp"
+            data-wow-delay="800ms"
+          >
+
+            <div class="inner-block">
+
+              <div class="images-box">
+
+                <div class="shape-1">
+                  <img src="images/icons/shape-10.png" alt="">
+                </div>
+
+                <div class="image">
+
+                  <img
+                    src="images/resource/team3-4.jpg"
+                    alt="Support visibility"
+                  >
+
+                  <img
+                    src="images/resource/team3-4.jpg"
+                    alt="Support visibility"
+                  >
+
+                </div>
+
+              </div>
+
+
+              <div class="content-box">
+
+                <div class="h4 name">
+
+                  <a href="#workspace">
+                    Support visibility
+                  </a>
+
+                </div>
+
+                <div class="designation">
+                  Keep support context close to the moving opportunity.
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Dashboard -->
+  <section
+    class="faq-section-three"
+    id="partner-dashboard"
+  >
+
+    <div class="auto-container">
+
+      <div class="sec-title text-center">
+
+        <div class="h6 sub-title">
+          Partner dashboard
+        </div>
+
+        <div class="h2 title">
+
+          One workspace.
+
+          <br>
+
+          <span>
+            Everything visible.
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="default-tabs tabs-box mb-0">
+
+
+        <div
+          class="tab-btns tab-buttons wow fadeInUp"
+          data-wow-delay="300ms"
+        >
+
+          <button
+            data-tab="#prod-dashboard-overview"
+            class="tab-btn active-btn"
+          >
+            Overview
+          </button>
+
+          <button
+            data-tab="#prod-latest-enquiry"
+            class="tab-btn"
+          >
+            Latest Enquiry
+          </button>
+
+          <button
+            data-tab="#prod-workspace-support"
+            class="tab-btn"
+          >
+            Workspace
+          </button>
+
+        </div>
+
+
+        <div class="tabs-content">
+
+
+          <!-- Overview -->
+          <div
+            class="tab active-tab"
+            id="prod-dashboard-overview"
+          >
+
+            <div class="tab-inner-content">
+
+              <div class="row">
+
+                <div class="faq-column col-lg-12">
+
+                  <div class="inner-column">
+
+                    <div class="faq-box">
+
+                      <div class="inner-box">
+
+                        <ul class="accordion-box">
+
+
+                          <li class="accordion block active-block">
+
+                            <div class="acc-btn active">
+
+                              New enquiries
+
+                              <i class="icon fa-solid fa-plus"></i>
+
+                            </div>
+
+                            <div class="acc-content current">
+
+                              <div class="content">
+
+                                <div class="text">
+                                  12 new enquiries are visible in the partner dashboard.
+                                </div>
+
+                              </div>
+
+                            </div>
+
+                          </li>
+
+
+                          <li class="accordion block">
+
+                            <div class="acc-btn">
+
+                              Quotes sent
+
+                              <i class="icon fa-solid fa-plus"></i>
+
+                            </div>
+
+                            <div class="acc-content">
+
+                              <div class="content">
+
+                                <div class="text">
+                                  08 quotations sent through the partner workspace.
+                                </div>
+
+                              </div>
+
+                            </div>
+
+                          </li>
+
+
+                          <li class="accordion block">
+
+                            <div class="acc-btn">
+
+                              Bookings
+
+                              <i class="icon fa-solid fa-plus"></i>
+
+                            </div>
+
+                            <div class="acc-content">
+
+                              <div class="content">
+
+                                <div class="text">
+                                  03 bookings are currently visible in the workspace.
+                                </div>
+
+                              </div>
+
+                            </div>
+
+                          </li>
+
+
+                          <li class="accordion block">
+
+                            <div class="acc-btn">
+
+                              Latest enquiry
+
+                              <i class="icon fa-solid fa-plus"></i>
+
+                            </div>
+
+                            <div class="acc-content">
+
+                              <div class="content">
+
+                                <div class="text">
+                                  House move · London E8 → London E9 · Ready to quote.
+                                </div>
+
+                              </div>
+
+                            </div>
+
+                          </li>
+
+                        </ul>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- Latest Enquiry -->
+          <div
+            class="tab"
+            id="prod-latest-enquiry"
+          >
+
+            <div class="tab-inner-content">
+
+              <div class="row">
+
+                <div class="faq-column col-lg-12">
+
+                  <div class="inner-column">
+
+                    <div class="faq-box">
+
+                      <div class="inner-box">
+
+                        <ul class="accordion-box">
+
+
+                          <li class="accordion block active-block">
+
+                            <div class="acc-btn active">
+
+                              Inventory
+
+                              <i class="icon fa-solid fa-plus"></i>
+
+                            </div>
+
+                            <div class="acc-content current">
+
+                              <div class="content">
+
+                                <div class="text">
+                                  Included in the latest enquiry details.
+                                </div>
+
+                              </div>
+
+                            </div>
+
+                          </li>
+
+
+                          <li class="accordion block">
+
+                            <div class="acc-btn">
+
+                              Move date
+
+                              <i class="icon fa-solid fa-plus"></i>
+
+                            </div>
+
+                            <div class="acc-content">
+
+                              <div class="content">
+
+                                <div class="text">
+                                  Included upfront so your team can assess availability.
+                                </div>
+
+                              </div>
+
+                            </div>
+
+                          </li>
+
+
+                          <li class="accordion block">
+
+                            <div class="acc-btn">
+
+                              Photos
+
+                              <i class="icon fa-solid fa-plus"></i>
+
+                            </div>
+
+                            <div class="acc-content">
+
+                              <div class="content">
+
+                                <div class="text">
+                                  Photos can be available with the enquiry.
+                                </div>
+
+                              </div>
+
+                            </div>
+
+                          </li>
+
+
+                          <li class="accordion block">
+
+                            <div class="acc-btn">
+
+                              Access notes
+
+                              <i class="icon fa-solid fa-plus"></i>
+
+                            </div>
+
+                            <div class="acc-content">
+
+                              <div class="content">
+
+                                <div class="text">
+                                  Access information stays with the job details.
+                                </div>
+
+                              </div>
+
+                            </div>
+
+                          </li>
+
+                        </ul>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- Workspace -->
+          <div
+            class="tab"
+            id="prod-workspace-support"
+          >
+
+            <div class="tab-inner-content">
+
+              <div class="row">
+
+                <div class="faq-column col-lg-12">
+
+                  <div class="inner-column">
+
+                    <div class="faq-box">
+
+                      <div class="inner-box">
+
+                        <ul class="accordion-box">
+
+
+                          <li class="accordion block active-block">
+
+                            <div class="acc-btn active">
+
+                              Review enquiry
+
+                              <i class="icon fa-solid fa-plus"></i>
+
+                            </div>
+
+                            <div class="acc-content current">
+
+                              <div class="content">
+
+                                <div class="text">
+
+                                  Open the latest enquiry and review
+                                  the structured move information.
+
+                                </div>
+
+                              </div>
+
+                            </div>
+
+                          </li>
+
+
+                          <li class="accordion block">
+
+                            <div class="acc-btn">
+
+                              Customer conversations
+
+                              <i class="icon fa-solid fa-plus"></i>
+
+                            </div>
+
+                            <div class="acc-content">
+
+                              <div class="content">
+
+                                <div class="text">
+                                  Messages stay organised in one place.
+                                </div>
+
+                              </div>
+
+                            </div>
+
+                          </li>
+
+
+                          <li class="accordion block">
+
+                            <div class="acc-btn">
+
+                              Performance
+
+                              <i class="icon fa-solid fa-plus"></i>
+
+                            </div>
+
+                            <div class="acc-content">
+
+                              <div class="content">
+
+                                <div class="text">
+                                  Reviews and response quality stay visible.
+                                </div>
+
+                              </div>
+
+                            </div>
+
+                          </li>
+
+
+                          <li class="accordion block">
+
+                            <div class="acc-btn">
+
+                              Insights
+
+                              <i class="icon fa-solid fa-plus"></i>
+
+                            </div>
+
+                            <div class="acc-content">
+
+                              <div class="content">
+
+                                <div class="text">
+                                  Understand enquiries, quotes and wins.
+                                </div>
+
+                              </div>
+
+                            </div>
+
+                          </li>
+
+                        </ul>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="text-center mt-4">
+
+          <div class="h5">
+            Latest enquiry: House move · London E8 → London E9 · Ready to quote
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Email CTA -->
+  <section
+    class="cta-section"
+    id="contact"
+  >
+
+    <div class="outer-box">
+
+      <div class="bg-shape">
+        <img src="images/icons/shape-13.png" alt="">
+      </div>
+
+      <div class="shape-1">
+        <img src="images/icons/shape-11.png" alt="">
+      </div>
+
+      <div class="shape-2">
+        <img src="images/icons/shape-12.png" alt="">
+      </div>
+
+
+      <div class="content">
+
+        <div class="h2 title">
+
+          Tell us about your moving business.
+          It takes less time than reading this page.
+
+        </div>
+
+
+        <div class="text text-white mt-3">
+          Free · No spam · No obligation
+        </div>
+
+
+        <form
+          class="partner-email-panel"
+          action="#"
+        >
+
+          <input
+            type="email"
+            placeholder="Enter Email Address"
+            required
+          >
+
+          <button
+            class="theme-btn btn-style-one"
+            type="submit"
+          >
+            Submit
+            <i class="fa-light fa-arrow-up-right"></i>
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Testimonials -->
+  <section
+    class="testimonial-section-three"
+    id="testimonials"
+  >
+
+    <div class="outer-box">
+
+      <div class="auto-container">
+
+        <div class="row align-items-center">
+
+
+          <div class="content-column col-xl-7">
+
+            <div class="inner-column">
+
+              <div class="sec-title light">
+
+                <div class="h6 sub-title">
+                  Partner Feedback
+                </div>
+
+                <div class="h2 title">
+
+                  Don't take
+
+                  <span>
+                    our word for it.
+                  </span>
+
+                </div>
+
+
+                <div class="text">
+
+                  Feedback from removal companies using AnQ
+                  to receive and convert moving opportunities.
+
+                </div>
+
+              </div>
+
+
+              <div class="testimonial-block-three">
+
+                <div class="inner-block">
+
+                  <div
+                    class="swiper-container testi-three-slider pb-0 overflow-hidden"
+                  >
+
+                    <div class="swiper-wrapper">
+
+
+                      <div class="swiper-slide">
+
+                        <div class="icon">
+                          <img src="images/icons/testi3-1.png" alt="">
+                        </div>
+
+                        <div class="text">
+
+                          “AnQ has given us another reliable source of
+                          enquiries without constantly increasing
+                          our advertising spend.”
+
+                        </div>
+
+
+                        <div class="author-info">
+
+                          <div class="image">
+
+                            <img
+                              src="images/resource/testi2-1.png"
+                              alt="Removals company, London"
+                            >
+
+                          </div>
+
+                          <div class="info">
+
+                            <div class="h4 name">
+                              JM
+                            </div>
+
+                            <div class="designation">
+                              Removals company, London
+                            </div>
+
+                          </div>
+
+                        </div>
+
+                      </div>
+
+
+                      <div class="swiper-slide">
+
+                        <div class="icon">
+                          <img src="images/icons/testi3-1.png" alt="">
+                        </div>
+
+                        <div class="text">
+
+                          “Enquiries arrive already structured around the move,
+                          so our office spends far less time going back and forth.”
+
+                        </div>
+
+
+                        <div class="author-info">
+
+                          <div class="image">
+
+                            <img
+                              src="images/resource/testi2-2.png"
+                              alt="Removals company, Manchester"
+                            >
+
+                          </div>
+
+                          <div class="info">
+
+                            <div class="h4 name">
+                              RT
+                            </div>
+
+                            <div class="designation">
+                              Removals company, Manchester
+                            </div>
+
+                          </div>
+
+                        </div>
+
+                      </div>
+
+
+                      <div class="swiper-slide">
+
+                        <div class="icon">
+                          <img src="images/icons/testi3-1.png" alt="">
+                        </div>
+
+                        <div class="text">
+
+                          “We get the key details upfront —
+                          locations, property type,
+                          moving date and requirements.”
+
+                        </div>
+
+
+                        <div class="author-info">
+
+                          <div class="image">
+
+                            <img
+                              src="images/resource/testi2-3.png"
+                              alt="Removals company, Bristol"
+                            >
+
+                          </div>
+
+                          <div class="info">
+
+                            <div class="h4 name">
+                              SK
+                            </div>
+
+                            <div class="designation">
+                              Removals company, Bristol
+                            </div>
+
+                          </div>
+
+                        </div>
+
+                      </div>
+
+
+                      <div class="swiper-slide">
+
+                        <div class="icon">
+                          <img src="images/icons/testi3-1.png" alt="">
+                        </div>
+
+                        <div class="text">
+
+                          “Having enquiries, customers and quotes organised
+                          in one place makes the whole process easier to manage.”
+
+                        </div>
+
+
+                        <div class="author-info">
+
+                          <div class="image">
+
+                            <img
+                              src="images/resource/testi2-1.png"
+                              alt="Removals company, Leeds"
+                            >
+
+                          </div>
+
+                          <div class="info">
+
+                            <div class="h4 name">
+                              AD
+                            </div>
+
+                            <div class="designation">
+                              Removals company, Leeds
+                            </div>
+
+                          </div>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="image-column col-xl-5">
+
+            <div
+              class="inner-column wow fadeInUp"
+              data-wow-delay="300ms"
+            >
+
+              <div class="image">
+
+                <img
+                  src="https://images.unsplash.com/photo-1600518464441-9154a4dea21b?auto=format&fit=crop&w=1200&q=90"
+                  alt="Moving truck on the road"
+                >
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Lead Problems -->
+  <section class="blog-section-two">
+
+    <div class="auto-container">
+
+      <div class="sec-title text-center">
+
+        <div class="h6 sub-title">
+          Why the old lead model hurts
+        </div>
+
+        <div class="h2 title">
+
+          Three problems AnQ is designed
+
+          <br>
+
+          <span>
+            to reduce.
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="row gx-4">
+
+
+        <div class="blog-block col-xl-4 col-md-6">
+
+          <div
+            class="inner-block wow fadeInUp"
+            data-wow-delay="200ms"
+          >
+
+            <div class="image-box">
+
+              <div class="image">
+
+                <a href="#problem">
+
+                  <img
+                    src="images/resource/service5-1.jpg"
+                    alt="Marketing spend keeps rising"
+                  >
+
+                  <img
+                    src="images/resource/service5-1.jpg"
+                    alt="Marketing spend keeps rising"
+                  >
+
+                </a>
+
+              </div>
+
+            </div>
+
+
+            <div class="content-box">
+
+              <div class="post-meta">
+
+                <div class="category">
+                  Before AnQ
+                </div>
+
+                <div class="date">
+                  High spend
+                </div>
+
+              </div>
+
+
+              <div class="h3 title">
+
+                <a href="#problem">
+                  Marketing spend keeps rising
+                </a>
+
+              </div>
+
+
+              <div class="partner-card-copy">
+
+                Paid ads, directories and lead-generation campaigns
+                can drain budget before a confirmed booking arrives.
+
+              </div>
+
+
+              <a
+                class="btn-read-more"
+                href="#how-it-works"
+              >
+                <i class="fa-regular fa-arrow-right"></i>
+                See the smoother flow
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="blog-block col-xl-4 col-md-6">
+
+          <div
+            class="inner-block wow fadeInUp"
+            data-wow-delay="400ms"
+          >
+
+            <div class="image-box">
+
+              <div class="image">
+
+                <a href="#problem">
+
+                  <img
+                    src="images/resource/service5-2.jpg"
+                    alt="Office teams repeat the same work"
+                  >
+
+                  <img
+                    src="images/resource/service5-2.jpg"
+                    alt="Office teams repeat the same work"
+                  >
+
+                </a>
+
+              </div>
+
+            </div>
+
+
+            <div class="content-box">
+
+              <div class="post-meta">
+
+                <div class="category">
+                  Before AnQ
+                </div>
+
+                <div class="date">
+                  Admin load
+                </div>
+
+              </div>
+
+
+              <div class="h3 title">
+
+                <a href="#problem">
+                  Office teams repeat the same work
+                </a>
+
+              </div>
+
+
+              <div class="partner-card-copy">
+
+                Calls, missing details, quote follow-ups
+                and customer chasing take time away from confirmed moves.
+
+              </div>
+
+
+              <a
+                class="btn-read-more"
+                href="#how-it-works"
+              >
+                <i class="fa-regular fa-arrow-right"></i>
+                See the smoother flow
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="blog-block col-xl-4 col-md-6">
+
+          <div
+            class="inner-block wow fadeInUp"
+            data-wow-delay="600ms"
+          >
+
+            <div class="image-box">
+
+              <div class="image">
+
+                <a href="#problem">
+
+                  <img
+                    src="images/resource/service5-3.jpg"
+                    alt="Pipeline feels unpredictable"
+                  >
+
+                  <img
+                    src="images/resource/service5-3.jpg"
+                    alt="Pipeline feels unpredictable"
+                  >
+
+                </a>
+
+              </div>
+
+            </div>
+
+
+            <div class="content-box">
+
+              <div class="post-meta">
+
+                <div class="category">
+                  Before AnQ
+                </div>
+
+                <div class="date">
+                  Uneven flow
+                </div>
+
+              </div>
+
+
+              <div class="h3 title">
+
+                <a href="#problem">
+                  Pipeline feels unpredictable
+                </a>
+
+              </div>
+
+
+              <div class="partner-card-copy">
+
+                Some weeks are overloaded.
+                Other weeks feel quiet,
+                making planning and staffing harder.
+
+              </div>
+
+
+              <a
+                class="btn-read-more"
+                href="#how-it-works"
+              >
+                <i class="fa-regular fa-arrow-right"></i>
+                See the smoother flow
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Final CTA -->
+  <section class="cta-section">
+
+    <div class="outer-box">
+
+      <div class="bg-shape">
+        <img src="images/icons/shape-13.png" alt="">
+      </div>
+
+      <div class="shape-1">
+        <img src="images/icons/shape-11.png" alt="">
+      </div>
+
+      <div class="shape-2">
+        <img src="images/icons/shape-12.png" alt="">
+      </div>
+
+
+      <div class="content">
+
+        <div class="h2 title">
+
+          You are joining a network,
+          not buying random leads.
+
+        </div>
+
+
+        <div class="d-flex flex-wrap gap-3 justify-content-center mt-4">
+
+          <a
+            href="#apply"
+            class="theme-btn btn-style-one"
+          >
+            Become an AnQ Partner
+            <i class="fa-light fa-arrow-up-right"></i>
+          </a>
+
+          <a
+            href="page-faq.html"
+            class="theme-btn btn-style-five"
+          >
+            Read Movers FAQ
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="main-footer footer-style-two">
+
+    <div class="outer-box">
+
+      <div class="shape-1">
+        <img src="images/icons/shape-6.png" alt="">
+      </div>
+
+      <div class="shape-2">
+        <img src="images/icons/footer2-1.png" alt="">
+      </div>
+
+      <div class="shape-3">
+        <img src="images/icons/footer2-2.png" alt="">
+      </div>
+
+
+      <div class="auto-container">
+
+        <div class="widgets-section">
+
+          <div class="row gx-4">
+
+
+            <div class="footer-column col-xl-4 col-md-6">
+
+              <div class="footer-widget about-widget">
+
+                <div class="logo">
+
+                  <a
+                    class="anq-logo-text"
+                    href="index-2.html"
+                  >
+                    AnQ MOVERS
+                  </a>
+
+                </div>
+
+
+                <div class="content">
+
+                  <div class="text">
+
+                    AnQ helps moving companies receive qualified opportunities,
+                    structured move information
+                    and a cleaner quote-to-booking flow.
+
+                  </div>
+
+                </div>
+
+
+                <div class="info-box">
+
+
+                  <div class="info">
+
+                    <span>
+                      <i class="fa-solid fa-handshake"></i>
+                      Partner Network
+                    </span>
+
+                    <div class="h5">
+                      500+ verified partners
+                    </div>
+
+                  </div>
+
+
+                  <div class="info">
+
+                    <span>
+                      <i class="fa-regular fa-envelope"></i>
+                      Email Us
+                    </span>
+
+                    <div class="h5">
+                      support@anqmovers.co.uk
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div class="footer-column col-xl-2 col-md-6">
+
+              <div class="footer-widget links-widget">
+
+                <div class="h5 widget-title">
+                  For Movers
+                </div>
+
+                <div class="widget-content">
+
+                  <ul class="user-links">
+
+                    <li>
+                      <a href="#apply">
+                        Become a Partner
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="#how-it-works">
+                        How It Works
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="#workspace">
+                        Partner Workspace
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="#partner-standards">
+                        Partner Standards
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="#testimonials">
+                        Partner Feedback
+                      </a>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div class="footer-column col-xl-2 col-md-6">
+
+              <div class="footer-widget links-widget style-two">
+
+                <div class="h5 widget-title">
+                  Platform
+                </div>
+
+                <div class="widget-content">
+
+                  <ul class="user-links">
+
+                    <li>
+                      <a href="#workspace">
+                        Enquiries
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="#workspace">
+                        Messages
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="#workspace">
+                        Job Details
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="#workspace">
+                        Bookings
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="#workspace">
+                        Insights
+                      </a>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div class="footer-column col-xl-4 col-md-6">
+
+              <div class="footer-widget subscribe-widget">
+
+                <div class="h5 widget-title">
+                  Ready to receive qualified moving enquiries?
+                </div>
+
+                <div class="text">
+                  Become an AnQ Channel Partner.
+                </div>
+
+
+                <div class="form-clt">
+
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    required
+                  >
+
+                  <button
+                    class="theme-btn btn-style-five"
+                    type="submit"
+                  >
+                    Submit
+                  </button>
+
+                </div>
+
+
+                <form class="check-box">
+
+                  <input
+                    type="checkbox"
+                    id="agree"
+                    name="agree"
+                    value="agree"
+                  >
+
+                  <label for="agree">
+
+                    Agree to the
+
+                    <a href="#">
+                      Privacy Policy.
+                    </a>
+
+                  </label>
+
+                </form>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+          <div class="inner-container">
+
+            <p class="copyright-text">
+              Copyright © 2026 AnQ Movers. All Rights Reserved.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="style-text-box">
+
+          <div class="h1 style-text">
+            AnQ Movers
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- Sticky Apply Bar -->
+  <div
+    class="sticky-apply-bar"
+    id="stickyApplyBar"
+  >
+
+    <div class="sticky-apply-inner">
+
+      <p>
+        Ready to receive qualified moving enquiries?
+      </p>
+
+      <a
+        href="#apply"
+        class="theme-btn btn-style-three"
+      >
+        Become an AnQ Partner
+        <i class="fa-light fa-arrow-up-right"></i>
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+<!-- End Page Wrapper -->
+
+
+<script src="js/jquery.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.fancybox.js"></script>
+<script src="js/jquery-ui.js"></script>
+
+<script src="js/wow.js"></script>
+<script src="js/select2.min.js"></script>
+<script src="js/appear.js"></script>
+<script src="js/bxslider.js"></script>
+<script src="js/mixitup.js"></script>
+<script src="js/knob.js"></script>
+
+<script src="js/swiper.min.js"></script>
+<script src="js/aos.js"></script>
+
+<script src="js/gsap.min.js"></script>
+<script src="js/ScrollTrigger.min.js"></script>
+<script src="js/splitType.js"></script>
+<script src="js/gsap-scroll-smoother.js"></script>
+<script src="js/gsap-scroll-to-plugin.js"></script>
+<script src="js/SplitText.min.js"></script>
+
+<script src="js/custom-gsap.js"></script>
+<script src="js/script.js"></script>
+
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/jquery.form.min.js"></script>
+<script src="js/contact-form-script.js"></script>
+
+
+<script>
+(function () {
+
+  const form =
+    document.getElementById("anqPartnerForm");
+
+  const step1 =
+    document.querySelector(
+      '.partner-form-step[data-step="1"]'
+    );
+
+  const step2 =
+    document.querySelector(
+      '.partner-form-step[data-step="2"]'
+    );
+
+  const progress =
+    document.getElementById(
+      "partnerProgress"
+    );
+
+  const content =
+    document.getElementById(
+      "partnerFormContent"
+    );
+
+  const success =
+    document.getElementById(
+      "partnerSuccess"
+    );
+
+  const continueBtn =
+    document.getElementById(
+      "partnerContinue"
+    );
+
+  const backBtn =
+    document.getElementById(
+      "partnerBack"
+    );
+
+
+  function validateStep(container) {
+
+    const fields =
+      Array.from(
+        container.querySelectorAll(
+          "input[required], select[required]"
+        )
+      );
+
+    for (
+      const field
+      of fields
+    ) {
+
+      if (
+        !field.checkValidity()
+      ) {
+
+        field.reportValidity();
+
+        return false;
+
+      }
+
+    }
+
+    return true;
+
+  }
+
+
+  continueBtn?.addEventListener(
+    "click",
+    function () {
+
+      if (
+        !validateStep(step1)
+      ) {
+        return;
+      }
+
+      step1.classList.remove(
+        "active"
+      );
+
+      step2.classList.add(
+        "active"
+      );
+
+      progress.style.width =
+        "100%";
+
+    }
+  );
+
+
+  backBtn?.addEventListener(
+    "click",
+    function () {
+
+      step2.classList.remove(
+        "active"
+      );
+
+      step1.classList.add(
+        "active"
+      );
+
+      progress.style.width =
+        "50%";
+
+    }
+  );
+
+
+  form?.addEventListener(
+    "submit",
+    function (event) {
+
+      event.preventDefault();
+
+      if (
+        !validateStep(step2)
+      ) {
+        return;
+      }
+
+      content.style.display =
+        "none";
+
+      success.classList.add(
+        "active"
+      );
+
+    }
+  );
+
+
+  const stickyBar =
+    document.getElementById(
+      "stickyApplyBar"
+    );
+
+
+  function toggleStickyApply() {
+
+    if (
+      !stickyBar
+    ) {
+      return;
+    }
+
+    const y =
+      window.scrollY || 0;
+
+    const doc =
+      document.documentElement;
+
+    const nearBottom =
+      y + window.innerHeight >
+      doc.scrollHeight - 700;
+
+
+    stickyBar.classList.toggle(
+      "show",
+      y >
+        window.innerHeight *
+          0.9 &&
+        !nearBottom
+    );
+
+  }
+
+
+  window.addEventListener(
+    "scroll",
+    toggleStickyApply,
+    {
+      passive: true
+    }
+  );
+
+  toggleStickyApply();
+
+})();
+</script>
+
+</body>
+</html>
