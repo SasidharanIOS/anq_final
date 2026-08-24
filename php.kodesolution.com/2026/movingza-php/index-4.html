@@ -707,6 +707,522 @@
       }
     }
 
+
+    /* =========================================================
+       QUOTE CONFIDENCE SECTION - REDESIGNED
+       Content-focused structure for quote details and partner standards.
+    ========================================================= */
+    .anq-quote-confidence-section {
+      position: relative;
+      overflow: hidden;
+      background: #fff;
+      padding-top: 110px;
+      padding-bottom: 110px;
+    }
+
+    .anq-quote-confidence-section:before {
+      content: "";
+      position: absolute;
+      width: 620px;
+      height: 620px;
+      border-radius: 50%;
+      top: 130px;
+      left: -260px;
+      background: radial-gradient(circle, rgba(255, 193, 59, 0.15), rgba(255, 193, 59, 0));
+      pointer-events: none;
+    }
+
+    .anq-quote-confidence-section:after {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      right: -210px;
+      bottom: 80px;
+      background: radial-gradient(circle, rgba(7, 68, 61, 0.10), rgba(7, 68, 61, 0));
+      pointer-events: none;
+    }
+
+    .anq-quote-confidence-section .auto-container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .anq-quote-confidence-section .sec-title {
+      max-width: 980px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 34px;
+    }
+
+    .anq-quote-confidence-section .sec-title .text {
+      max-width: 840px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .anq-quote-tabs-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 42px;
+    }
+
+    .anq-quote-tabs.tab-btns {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px;
+      border: 1px solid rgba(7, 68, 61, 0.12);
+      border-radius: 999px;
+      background: #f7f4ef;
+      box-shadow: 0 16px 45px rgba(15, 23, 42, 0.07);
+    }
+
+    .anq-quote-tabs .tab-btn {
+      border: 0;
+      min-height: 48px;
+      padding: 0 24px;
+      border-radius: 999px;
+      background: transparent;
+      color: #10102f;
+      font-size: 15px;
+      font-weight: 900;
+      transition: 0.3s ease;
+    }
+
+    .anq-quote-tabs .tab-btn.active-btn {
+      background: #07443d;
+      color: #fff;
+      box-shadow: 0 12px 30px rgba(7, 68, 61, 0.20);
+    }
+
+    .anq-quote-shell {
+      position: relative;
+    }
+
+    .anq-quote-panel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 34px;
+      border: 1px solid rgba(7, 68, 61, 0.10);
+      background: linear-gradient(135deg, #fffdf8 0%, #ffffff 45%, #f8fbfa 100%);
+      box-shadow: 0 30px 90px rgba(15, 23, 42, 0.08);
+      padding: 18px;
+    }
+
+    .anq-quote-panel:before {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border-radius: 26px;
+      border: 1px solid rgba(255, 193, 59, 0.22);
+      pointer-events: none;
+    }
+
+    .anq-quote-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 0.82fr 1.18fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .anq-quote-story-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 100%;
+      padding: 34px;
+      border-radius: 28px;
+      background: #07443d;
+      color: #fff;
+      box-shadow: 0 24px 60px rgba(7, 68, 61, 0.20);
+    }
+
+    .anq-quote-story-card:before {
+      content: "";
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      right: -150px;
+      top: -150px;
+      background: rgba(255, 193, 59, 0.18);
+    }
+
+    .anq-quote-story-card:after {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      left: -110px;
+      bottom: -120px;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .anq-quote-icon {
+      position: relative;
+      z-index: 2;
+      width: 68px;
+      height: 68px;
+      display: grid;
+      place-items: center;
+      border-radius: 22px;
+      background: #ffc13b;
+      color: #111;
+      font-size: 26px;
+      margin-bottom: 24px;
+    }
+
+    .anq-quote-story-card h3 {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      font-size: 34px;
+      line-height: 1.08;
+      font-weight: 900;
+      margin-bottom: 16px;
+      letter-spacing: -0.04em;
+    }
+
+    .anq-quote-story-card p {
+      position: relative;
+      z-index: 2;
+      color: rgba(255, 255, 255, 0.78);
+      line-height: 1.75;
+      margin-bottom: 0;
+    }
+
+    .anq-info-path {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .anq-path-item {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+    }
+
+    .anq-path-item span {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(255, 193, 59, 0.16);
+      color: #ffc13b;
+      font-weight: 900;
+      font-size: 13px;
+    }
+
+    .anq-path-item strong {
+      display: block;
+      color: #fff;
+      font-size: 15px;
+      line-height: 1.35;
+      margin-bottom: 3px;
+    }
+
+    .anq-path-item small {
+      display: block;
+      color: rgba(255, 255, 255, 0.68);
+      line-height: 1.45;
+    }
+
+    .anq-detail-board {
+      padding: 28px;
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(7, 68, 61, 0.08);
+    }
+
+    .anq-board-top {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+      padding-bottom: 22px;
+      margin-bottom: 22px;
+      border-bottom: 1px solid rgba(7, 68, 61, 0.09);
+    }
+
+    .anq-board-top h3 {
+      font-size: 28px;
+      line-height: 1.15;
+      font-weight: 900;
+      color: #07443d;
+      margin-bottom: 0;
+      letter-spacing: -0.035em;
+    }
+
+    .anq-board-top p {
+      max-width: 330px;
+      color: #777;
+      line-height: 1.65;
+      margin-bottom: 0;
+    }
+
+    .anq-board-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: #f7f4ef;
+      color: #07443d;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+
+    .anq-info-card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .anq-info-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 100%;
+      padding: 22px;
+      border-radius: 24px;
+      background: #fff;
+      border: 1px solid rgba(7, 68, 61, 0.10);
+      box-shadow: 0 16px 42px rgba(15, 23, 42, 0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .anq-info-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(255, 193, 59, 0.70);
+      box-shadow: 0 26px 64px rgba(15, 23, 42, 0.11);
+    }
+
+    .anq-info-card.featured {
+      background: #fff7df;
+      border-color: rgba(255, 193, 59, 0.72);
+    }
+
+    .anq-info-card .anq-card-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 18px;
+    }
+
+    .anq-card-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: #07443d;
+      color: #fff;
+      font-size: 18px;
+    }
+
+    .anq-info-card.featured .anq-card-icon {
+      background: #ffc13b;
+      color: #111;
+    }
+
+    .anq-count-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 70px;
+      height: 34px;
+      border-radius: 999px;
+      background: #f7f4ef;
+      color: #111;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .anq-count-pill span {
+      font-size: 18px;
+      margin-right: 5px;
+      color: #07443d;
+    }
+
+    .anq-info-card h4 {
+      font-size: 22px;
+      line-height: 1.18;
+      color: #07443d;
+      font-weight: 900;
+      margin-bottom: 10px;
+      letter-spacing: -0.025em;
+    }
+
+    .anq-info-card p {
+      color: #747474;
+      font-size: 14px;
+      line-height: 1.65;
+      margin-bottom: 18px;
+    }
+
+    .anq-info-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .anq-info-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: #424242;
+      line-height: 1.45;
+      font-size: 14px;
+    }
+
+    .anq-info-list li i {
+      width: 22px;
+      height: 22px;
+      min-width: 22px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(7, 68, 61, 0.09);
+      color: #07443d;
+      font-size: 11px;
+      margin-top: -1px;
+    }
+
+    .anq-quote-result-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .anq-result-item {
+      padding: 18px;
+      border-radius: 20px;
+      background: #f7f4ef;
+      border: 1px solid rgba(7, 68, 61, 0.08);
+    }
+
+    .anq-result-item strong {
+      display: block;
+      color: #07443d;
+      font-size: 17px;
+      line-height: 1.25;
+      margin-bottom: 5px;
+    }
+
+    .anq-result-item span {
+      color: #777;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .anq-quote-bottom-note {
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 20px 24px;
+      border-radius: 24px;
+      background: #07443d;
+      color: #fff;
+      box-shadow: 0 20px 55px rgba(7, 68, 61, 0.18);
+    }
+
+    .anq-quote-bottom-note .h3 {
+      color: #fff;
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.2;
+      font-weight: 900;
+    }
+
+    .anq-quote-bottom-note p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.55;
+    }
+
+    .anq-quote-bottom-note .theme-btn {
+      white-space: nowrap;
+    }
+
+    @media (max-width: 1199px) {
+      .anq-quote-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .anq-info-card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 767px) {
+      .anq-quote-confidence-section {
+        padding-top: 80px;
+        padding-bottom: 80px;
+      }
+
+      .anq-quote-tabs.tab-btns {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        border-radius: 24px;
+      }
+
+      .anq-quote-tabs .tab-btn {
+        width: 100%;
+      }
+
+      .anq-quote-panel,
+      .anq-detail-board,
+      .anq-quote-story-card {
+        padding: 22px;
+        border-radius: 24px;
+      }
+
+      .anq-board-top {
+        display: block;
+      }
+
+      .anq-board-top h3 {
+        margin-bottom: 12px;
+        font-size: 24px;
+      }
+
+      .anq-info-card-grid,
+      .anq-quote-result-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .anq-quote-bottom-note {
+        display: block;
+        text-align: center;
+      }
+
+      .anq-quote-bottom-note p {
+        margin: 10px 0 18px;
+      }
+    }
+
     .pricing-section-two .features-list li {
       display: flex;
       gap: 10px;
@@ -836,6 +1352,335 @@
         flex-direction: column;
       }
     }
+  
+
+    /* =========================================================
+       PARTNER DASHBOARD SECTION - EXISTING CONTENT REDESIGN
+       No extra content added. Only the existing six cards are restyled.
+    ========================================================= */
+    #workspace.services-section-four {
+      position: relative;
+      overflow: hidden;
+      padding: 112px 0 118px;
+      background:
+        radial-gradient(circle at 12% 16%, rgba(255, 193, 59, 0.16), transparent 28%),
+        radial-gradient(circle at 86% 10%, rgba(7, 68, 61, 0.08), transparent 30%),
+        linear-gradient(180deg, #f8f2eb 0%, #fffaf4 100%);
+    }
+
+    #workspace.services-section-four:before {
+      content: "";
+      position: absolute;
+      width: 720px;
+      height: 720px;
+      left: -330px;
+      top: 160px;
+      border-radius: 50%;
+      border: 1px solid rgba(7, 68, 61, 0.08);
+      pointer-events: none;
+    }
+
+    #workspace.services-section-four:after {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      right: -240px;
+      bottom: -190px;
+      border-radius: 50%;
+      background: rgba(255, 193, 59, 0.12);
+      pointer-events: none;
+    }
+
+    #workspace.services-section-four .outer-box,
+    #workspace.services-section-four .auto-container {
+      position: relative;
+      z-index: 2;
+    }
+
+    #workspace.services-section-four .outer-box {
+      background: transparent !important;
+      padding: 0 !important;
+    }
+
+    #workspace .sec-title {
+      max-width: 980px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 56px !important;
+    }
+
+    #workspace .sec-title .sub-title {
+      margin-bottom: 18px;
+    }
+
+    #workspace .sec-title .title {
+      letter-spacing: -0.055em;
+    }
+
+    #workspace .row {
+      display: grid !important;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      align-items: stretch;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
+    #workspace .service-block-five {
+      width: 100% !important;
+      max-width: none !important;
+      flex: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    #workspace .service-block-five .inner-block,
+    #workspace .service-block-five .inner-block.style-two {
+      position: relative !important;
+      overflow: hidden !important;
+      height: 100% !important;
+      min-height: 340px !important;
+      padding: 26px !important;
+      border-radius: 30px !important;
+      background: rgba(255, 255, 255, 0.92) !important;
+      border: 1px solid rgba(7, 68, 61, 0.10) !important;
+      box-shadow: 0 22px 58px rgba(15, 23, 42, 0.08) !important;
+      display: grid !important;
+      grid-template-rows: auto auto auto 1fr;
+      transform: none !important;
+      transition:
+        transform 0.32s ease,
+        border-color 0.32s ease,
+        box-shadow 0.32s ease,
+        background-color 0.32s ease !important;
+    }
+
+    #workspace .service-block-five .inner-block:before {
+      content: "";
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      right: -78px;
+      top: -78px;
+      border-radius: 50%;
+      background: rgba(7, 68, 61, 0.06);
+      transition: 0.32s ease;
+      pointer-events: none;
+    }
+
+    #workspace .service-block-five .inner-block:after {
+      content: "";
+      position: absolute;
+      left: 26px;
+      right: 26px;
+      bottom: 18px;
+      height: 5px;
+      border-radius: 999px;
+      background: #f1eee9;
+      pointer-events: none;
+    }
+
+    #workspace .service-block-five:nth-child(1) .inner-block,
+    #workspace .service-block-five:nth-child(6) .inner-block {
+      background: #fffaf0 !important;
+      border-color: rgba(255, 193, 59, 0.45) !important;
+    }
+
+    #workspace .service-block-five:nth-child(3) .inner-block,
+    #workspace .service-block-five:nth-child(4) .inner-block {
+      background: linear-gradient(135deg, #ffffff 0%, #f8fbfa 100%) !important;
+    }
+
+    #workspace .service-block-five .inner-block:hover {
+      transform: translateY(-8px) !important;
+      border-color: rgba(255, 193, 59, 0.72) !important;
+      box-shadow: 0 34px 78px rgba(15, 23, 42, 0.13) !important;
+    }
+
+    #workspace .service-block-five .inner-block:hover:before {
+      background: rgba(255, 193, 59, 0.18);
+    }
+
+    #workspace .service-block-five .icon {
+      position: relative !important;
+      z-index: 2;
+      width: 62px !important;
+      height: 62px !important;
+      display: grid !important;
+      place-items: center !important;
+      margin: 0 0 18px !important;
+      padding: 0 !important;
+      border-radius: 20px !important;
+      background: #f7f4ef !important;
+      border: 1px solid rgba(7, 68, 61, 0.08) !important;
+    }
+
+    #workspace .service-block-five .icon img {
+      max-width: 38px !important;
+      max-height: 38px !important;
+      object-fit: contain !important;
+    }
+
+    #workspace .service-block-five .title,
+    #workspace .service-block-five .h4.title {
+      position: relative !important;
+      z-index: 2;
+      margin: 0 0 8px !important;
+      padding: 0 !important;
+      text-align: left !important;
+      font-size: 25px !important;
+      line-height: 1.14 !important;
+      letter-spacing: -0.035em;
+    }
+
+    #workspace .service-block-five .title a,
+    #workspace .service-block-five .h4.title a {
+      color: #07443d !important;
+      text-decoration: none !important;
+    }
+
+    #workspace .partner-card-copy {
+      position: relative !important;
+      z-index: 2;
+      display: block !important;
+      margin: 0 0 20px !important;
+      padding: 0 !important;
+      color: #696969 !important;
+      font-size: 15px !important;
+      line-height: 1.62 !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      text-align: left !important;
+    }
+
+    #workspace .service-block-five .image-box {
+      position: relative !important;
+      z-index: 2;
+      width: 100% !important;
+      height: 142px !important;
+      min-height: 142px !important;
+      margin: auto 0 20px !important;
+      padding: 0 !important;
+      overflow: hidden !important;
+      border-radius: 22px !important;
+      background: #f8f5ef !important;
+      border: 1px solid rgba(7, 68, 61, 0.08) !important;
+    }
+
+    #workspace .service-block-five .image-box .image,
+    #workspace .service-block-five .image-box .image.one,
+    #workspace .service-block-five .image-box .image.two,
+    #workspace .service-block-five .image-box .image.three,
+    #workspace .service-block-five .image-box .image.four {
+      position: static !important;
+      inset: auto !important;
+      left: auto !important;
+      right: auto !important;
+      top: auto !important;
+      bottom: auto !important;
+      width: 100% !important;
+      height: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      border-radius: 0 !important;
+      transform: none !important;
+      clip-path: none !important;
+      -webkit-mask: none !important;
+      mask: none !important;
+      overflow: hidden !important;
+    }
+
+    #workspace .service-block-five .image-box img {
+      width: 100% !important;
+      height: 100% !important;
+      min-height: 100% !important;
+      display: block !important;
+      object-fit: cover !important;
+      border-radius: 0 !important;
+      transform: scale(1.02) !important;
+      transition: transform 0.42s ease !important;
+    }
+
+    #workspace .service-block-five .inner-block:hover .image-box img {
+      transform: scale(1.08) !important;
+    }
+
+    #workspace .service-block-five:nth-child(3) .inner-block {
+      min-height: 380px !important;
+    }
+
+    #workspace .service-block-five:nth-child(3) .image-box {
+      height: 182px !important;
+    }
+
+    #workspace .service-block-five:nth-child(4),
+    #workspace .service-block-five:nth-child(5),
+    #workspace .service-block-five:nth-child(6) {
+      margin-top: 6px !important;
+    }
+
+    #workspace .btn-box {
+      grid-column: 1 / -1;
+      padding: 0 !important;
+      margin: 26px 0 0 !important;
+      text-align: center !important;
+    }
+
+    #workspace .btn-box .theme-btn {
+      box-shadow: 0 18px 42px rgba(255, 193, 59, 0.24);
+    }
+
+    @media (max-width: 1199px) {
+      #workspace .row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      #workspace .service-block-five:nth-child(3) .inner-block {
+        min-height: 340px !important;
+      }
+
+      #workspace .service-block-five:nth-child(3) .image-box {
+        height: 142px !important;
+      }
+    }
+
+    @media (max-width: 767px) {
+      #workspace.services-section-four {
+        padding: 82px 0 86px;
+      }
+
+      #workspace .sec-title {
+        margin-bottom: 34px !important;
+      }
+
+      #workspace .row {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      #workspace .service-block-five .inner-block,
+      #workspace .service-block-five .inner-block.style-two {
+        min-height: auto !important;
+        padding: 22px !important;
+        border-radius: 24px !important;
+      }
+
+      #workspace .service-block-five:nth-child(3) .inner-block {
+        min-height: auto !important;
+      }
+
+      #workspace .service-block-five .image-box,
+      #workspace .service-block-five:nth-child(3) .image-box {
+        height: 160px !important;
+      }
+
+      #workspace .service-block-five .title,
+      #workspace .service-block-five .h4.title {
+        font-size: 23px !important;
+      }
+    }
+
   </style>
 </head>
 
@@ -1332,9 +2177,7 @@ Pricing
 
                 <div id="partnerFormContent">
 
-                  <div class="partner-form-kicker">
-                    Partner application
-                  </div>
+                
 
 
                   <div
@@ -1345,13 +2188,7 @@ Pricing
                   </div>
 
 
-                  <div class="partner-form-copy">
-
-                    Fill the application here.
-                    Our team will review your details and contact you
-                    if more information is needed.
-
-                  </div>
+                 
 
 
                   <div class="partner-progress">
@@ -1372,13 +2209,10 @@ Pricing
                     >
 
                       <div class="h5 mb-3">
-                        Business Details
-                      </div>
-
-                      <div class="text mb-3">
                         Tell us about your business
                       </div>
 
+                      
 
                       <div class="row gx-3">
 
@@ -1622,12 +2456,9 @@ Pricing
                     >
 
                       <div class="h5 mb-3">
-                        Primary Contact
+                         Who should we contact?
                       </div>
 
-                      <div class="text mb-3">
-                        Who should we contact?
-                      </div>
 
 
                       <div class="row gx-3">
@@ -2088,10 +2919,7 @@ Pricing
 
             <div class="sec-title">
 
-              <div class="h6 sub-title">
-                Before AnQ vs After AnQ
-              </div>
-
+           
               <div class="h2 title">
 
                 Make the difference clear
@@ -3043,7 +3871,7 @@ Pricing
 
   <!-- Quote Details & Partner Standards -->
   <section
-    class="pricing-section-two"
+    class="pricing-section-two anq-quote-confidence-section"
     id="partner-standards"
   >
 
@@ -3078,35 +3906,37 @@ Pricing
       </div>
 
 
-      <div class="default-tabs tabs-box mb-0">
+      <div class="default-tabs tabs-box anq-quote-shell mb-0">
 
+        <div class="anq-quote-tabs-wrap">
 
-        <div
-          class="tab-btns tab-buttons wow fadeInUp"
-          data-wow-delay="300ms"
-        >
-
-          <button
-            data-tab="#prod-quote-details"
-            class="tab-btn one active-btn"
+          <div
+            class="anq-quote-tabs tab-btns tab-buttons wow fadeInUp"
+            data-wow-delay="300ms"
           >
-            Quote Details
-          </button>
 
-          <span></span>
+            <button
+              data-tab="#prod-quote-details"
+              class="tab-btn active-btn"
+              type="button"
+            >
+              Quote Details
+            </button>
 
-          <button
-            data-tab="#prod-partner-standards"
-            class="tab-btn"
-          >
-            Partner Standards
-          </button>
+            <button
+              data-tab="#prod-partner-standards"
+              class="tab-btn"
+              type="button"
+            >
+              Partner Standards
+            </button>
+
+          </div>
 
         </div>
 
 
         <div class="tabs-content">
-
 
           <!-- Quote Details -->
           <div
@@ -3114,176 +3944,197 @@ Pricing
             id="prod-quote-details"
           >
 
-            <div class="tab-inner-content">
+            <div class="anq-quote-panel wow fadeInUp" data-wow-delay="250ms">
 
-              <div class="pricing-outer">
+              <div class="anq-quote-grid">
 
-                <div class="row gx-4">
+                <aside class="anq-quote-story-card">
+
+                  <div class="anq-quote-icon">
+                    <i class="fa-solid fa-clipboard-check"></i>
+                  </div>
+
+                  <h3>
+                    From loose enquiry to quote-ready job.
+                  </h3>
+
+                  <p>
+                    The section is about confidence before quoting. So instead of showing pricing-style cards, the design now shows how customer information becomes a clear job profile for your team.
+                  </p>
+
+                  <div class="anq-info-path">
+
+                    <div class="anq-path-item">
+                      <span>01</span>
+                      <div>
+                        <strong>Customer gives move basics</strong>
+                        <small>Date, pickup postcode and delivery postcode are collected first.</small>
+                      </div>
+                    </div>
+
+                    <div class="anq-path-item">
+                      <span>02</span>
+                      <div>
+                        <strong>Property and access are clarified</strong>
+                        <small>Property type, size, floors and lift access help estimate effort.</small>
+                      </div>
+                    </div>
+
+                    <div class="anq-path-item">
+                      <span>03</span>
+                      <div>
+                        <strong>Inventory and media support the quote</strong>
+                        <small>Packing needs and available photos/videos reduce guesswork.</small>
+                      </div>
+                    </div>
+
+                  </div>
+
+                </aside>
 
 
-                  <div
-                    class="pricing-block-two col-xl-4 col-md-6 wow fadeInUp"
-                    data-wow-delay="200ms"
-                  >
+                <div class="anq-detail-board">
 
-                    <div class="inner-block">
+                  <div class="anq-board-top">
+                    <div>
+                      
 
-                      <div class="catagory">
+                      <h3>
+                        Details your team can review before saying yes.
+                      </h3>
+                    </div>
+
+                   
+                  </div>
+
+
+                  <div class="anq-info-card-grid">
+
+                    <div class="anq-info-card">
+
+                      <div class="anq-card-head">
+                        <div class="anq-card-icon">
+                          <i class="fa-solid fa-route"></i>
+                        </div>
+
+                     
+                      </div>
+
+                      <h4>
                         Move basics
-                      </div>
+                      </h4>
 
-                      <div class="price-box">
-                        <span>03</span> items
-                      </div>
+                      <p>
+                        The essential job timeline and route details needed before preparing a quote.
+                      </p>
 
-                      <div class="text">
-
-                        Structured information that helps your team
-                        work with more confidence.
-
-                      </div>
-
-
-                      <ul class="features-list">
-
+                      <ul class="anq-info-list">
                         <li>
                           <i class="fa-solid fa-check"></i>
                           Moving date
                         </li>
-
                         <li>
                           <i class="fa-solid fa-check"></i>
                           Pickup postcode
                         </li>
-
                         <li>
                           <i class="fa-solid fa-check"></i>
                           Delivery postcode
                         </li>
-
                       </ul>
-
-
-                      <a
-                        href="#apply"
-                        class="theme-btn btn-style-three"
-                      >
-                        Become a Partner
-                        <i class="fa-light fa-arrow-up-right"></i>
-                      </a>
 
                     </div>
 
-                  </div>
 
+                    <div class="anq-info-card featured">
 
-                  <div
-                    class="pricing-block-two col-xl-4 col-md-6 wow fadeInUp"
-                    data-wow-delay="400ms"
-                  >
+                      <div class="anq-card-head">
+                        <div class="anq-card-icon">
+                          <i class="fa-solid fa-building-user"></i>
+                        </div>
 
-                    <div class="inner-block active">
+                       
+                      </div>
 
-                      <div class="catagory">
+                      <h4>
                         Property & access
-                      </div>
+                      </h4>
 
-                      <div class="price-box">
-                        <span>03</span> items
-                      </div>
+                      <p>
+                        Access details help your team understand complexity before committing time.
+                      </p>
 
-                      <div class="text">
-
-                        Structured information that helps your team
-                        work with more confidence.
-
-                      </div>
-
-
-                      <ul class="features-list">
-
+                      <ul class="anq-info-list">
                         <li>
                           <i class="fa-solid fa-check"></i>
                           Property type
                         </li>
-
                         <li>
                           <i class="fa-solid fa-check"></i>
                           Property size
                         </li>
-
                         <li>
                           <i class="fa-solid fa-check"></i>
                           Floors and lift access
                         </li>
-
                       </ul>
 
+                    </div>
 
-                      <a
-                        href="#apply"
-                        class="theme-btn btn-style-three"
-                      >
-                        Become a Partner
-                        <i class="fa-light fa-arrow-up-right"></i>
-                      </a>
+
+                    <div class="anq-info-card">
+
+                      <div class="anq-card-head">
+                        <div class="anq-card-icon">
+                          <i class="fa-solid fa-box-open"></i>
+                        </div>
+
+                        
+                      </div>
+
+                      <h4>
+                        Inventory & media
+                      </h4>
+
+                      <p>
+                        Extra context helps reduce assumptions before the quote is submitted.
+                      </p>
+
+                      <ul class="anq-info-list">
+                        <li>
+                          <i class="fa-solid fa-check"></i>
+                          Inventory
+                        </li>
+                        <li>
+                          <i class="fa-solid fa-check"></i>
+                          Packing requirements
+                        </li>
+                        <li>
+                          <i class="fa-solid fa-check"></i>
+                          Photos/videos where available
+                        </li>
+                      </ul>
 
                     </div>
 
                   </div>
 
 
-                  <div
-                    class="pricing-block-two col-xl-4 col-md-6 wow fadeInUp"
-                    data-wow-delay="600ms"
-                  >
+                  <div class="anq-quote-result-strip">
 
-                    <div class="inner-block">
+                    <div class="anq-result-item">
+                      <strong>Faster understanding</strong>
+                      <span>Your team can understand the job earlier.</span>
+                    </div>
 
-                      <div class="catagory">
-                        Inventory & media
-                      </div>
+                    <div class="anq-result-item">
+                      <strong>Less chasing</strong>
+                      <span>Key questions are answered before quoting.</span>
+                    </div>
 
-                      <div class="price-box">
-                        <span>03</span> items
-                      </div>
-
-                      <div class="text">
-
-                        Structured information that helps your team
-                        work with more confidence.
-
-                      </div>
-
-
-                      <ul class="features-list">
-
-                        <li>
-                          <i class="fa-solid fa-check"></i>
-                          Inventory
-                        </li>
-
-                        <li>
-                          <i class="fa-solid fa-check"></i>
-                          Packing requirements
-                        </li>
-
-                        <li>
-                          <i class="fa-solid fa-check"></i>
-                          Photos/videos where available
-                        </li>
-
-                      </ul>
-
-
-                      <a
-                        href="#apply"
-                        class="theme-btn btn-style-three"
-                      >
-                        Become a Partner
-                        <i class="fa-light fa-arrow-up-right"></i>
-                      </a>
-
+                    <div class="anq-result-item">
+                      <strong>Better quotes</strong>
+                      <span>Better information creates better quotes.</span>
                     </div>
 
                   </div>
@@ -3303,156 +4154,193 @@ Pricing
             id="prod-partner-standards"
           >
 
-            <div class="tab-inner-content">
+            <div class="anq-quote-panel wow fadeInUp" data-wow-delay="250ms">
 
-              <div class="pricing-outer">
+              <div class="anq-quote-grid">
 
-                <div class="row gx-4">
+                <aside class="anq-quote-story-card">
+
+                  <div class="anq-quote-icon">
+                    <i class="fa-solid fa-handshake-angle"></i>
+                  </div>
+
+                  <h3>
+                    A partner network built around trust.
+                  </h3>
+
+                  <p>
+                    The standards tab is not a pricing table. It explains what keeps the AnQ partner network reliable for customers and fair for moving companies.
+                  </p>
+
+                  <div class="anq-info-path">
+
+                    <div class="anq-path-item">
+                      <span>01</span>
+                      <div>
+                        <strong>Verify the partner</strong>
+                        <small>Verification and insurance evidence support customer trust.</small>
+                      </div>
+                    </div>
+
+                    <div class="anq-path-item">
+                      <span>02</span>
+                      <div>
+                        <strong>Set service expectations</strong>
+                        <small>SLA, conduct and monitoring keep quality visible.</small>
+                      </div>
+                    </div>
+
+                    <div class="anq-path-item">
+                      <span>03</span>
+                      <div>
+                        <strong>Support fair competition</strong>
+                        <small>Customer support and clear standards create a healthier marketplace.</small>
+                      </div>
+                    </div>
+
+                  </div>
+
+                </aside>
 
 
-                  <div
-                    class="pricing-block-two col-xl-4 col-md-6 wow fadeInUp"
-                    data-wow-delay="200ms"
-                  >
+                <div class="anq-detail-board">
 
-                    <div class="inner-block">
+                  <div class="anq-board-top">
+                    <div>
+                      
 
-                      <div class="catagory">
+                      <h3>
+                        Standards that protect the customer experience.
+                      </h3>
+                    </div>
+
+                    
+                  </div>
+
+
+                  <div class="anq-info-card-grid">
+
+                    <div class="anq-info-card">
+
+                      <div class="anq-card-head">
+                        <div class="anq-card-icon">
+                          <i class="fa-solid fa-user-check"></i>
+                        </div>
+
+                       
+                      </div>
+
+                      <h4>
                         Trust & verification
-                      </div>
+                      </h4>
 
-                      <div class="price-box">
-                        <span>03</span> items
-                      </div>
+                      <p>
+                        Standards for confirming partner suitability before customer jobs are handled.
+                      </p>
 
-                      <div class="text">
-                        Standards for the AnQ partner network.
-                      </div>
-
-                      <ul class="features-list">
-
+                      <ul class="anq-info-list">
                         <li>
                           <i class="fa-solid fa-check"></i>
                           Verification
                         </li>
-
                         <li>
                           <i class="fa-solid fa-check"></i>
                           Insurance evidence
                         </li>
-
                         <li>
                           <i class="fa-solid fa-check"></i>
                           Partner standards
                         </li>
-
                       </ul>
-
-                      <a
-                        href="#apply"
-                        class="theme-btn btn-style-three"
-                      >
-                        Become a Partner
-                        <i class="fa-light fa-arrow-up-right"></i>
-                      </a>
 
                     </div>
 
-                  </div>
 
+                    <div class="anq-info-card featured">
 
-                  <div
-                    class="pricing-block-two col-xl-4 col-md-6 wow fadeInUp"
-                    data-wow-delay="400ms"
-                  >
+                      <div class="anq-card-head">
+                        <div class="anq-card-icon">
+                          <i class="fa-solid fa-list-check"></i>
+                        </div>
 
-                    <div class="inner-block active">
+                       
+                      </div>
 
-                      <div class="catagory">
+                      <h4>
                         Service standards
-                      </div>
+                      </h4>
 
-                      <div class="price-box">
-                        <span>03</span> items
-                      </div>
+                      <p>
+                        Expectations that keep service quality measurable and easy to review.
+                      </p>
 
-                      <div class="text">
-                        Standards for the AnQ partner network.
-                      </div>
-
-                      <ul class="features-list">
-
+                      <ul class="anq-info-list">
                         <li>
                           <i class="fa-solid fa-check"></i>
                           Service Level Agreement
                         </li>
-
                         <li>
                           <i class="fa-solid fa-check"></i>
                           Partner Code of Conduct
                         </li>
-
                         <li>
                           <i class="fa-solid fa-check"></i>
                           Performance monitoring
                         </li>
-
                       </ul>
 
-                      <a
-                        href="#apply"
-                        class="theme-btn btn-style-three"
-                      >
-                        Become a Partner
-                        <i class="fa-light fa-arrow-up-right"></i>
-                      </a>
+                    </div>
+
+
+                    <div class="anq-info-card">
+
+                      <div class="anq-card-head">
+                        <div class="anq-card-icon">
+                          <i class="fa-solid fa-people-arrows"></i>
+                        </div>
+
+                       
+                      </div>
+
+                      <h4>
+                        Support & competition
+                      </h4>
+
+                      <p>
+                        Marketplace support that helps customers and partners move forward fairly.
+                      </p>
+
+                      <ul class="anq-info-list">
+                        <li>
+                          <i class="fa-solid fa-check"></i>
+                          Customer support
+                        </li>
+                        <li>
+                          <i class="fa-solid fa-check"></i>
+                          Fair competition
+                        </li>
+                      </ul>
 
                     </div>
 
                   </div>
 
 
-                  <div
-                    class="pricing-block-two col-xl-4 col-md-6 wow fadeInUp"
-                    data-wow-delay="600ms"
-                  >
+                  <div class="anq-quote-result-strip">
 
-                    <div class="inner-block">
+                    <div class="anq-result-item">
+                      <strong>Customer trust</strong>
+                      <span>Verification helps customers feel safer choosing a mover.</span>
+                    </div>
 
-                      <div class="catagory">
-                        Support & competition
-                      </div>
+                    <div class="anq-result-item">
+                      <strong>Visible quality</strong>
+                      <span>Standards and monitoring keep service quality trackable.</span>
+                    </div>
 
-                      <div class="price-box">
-                        <span>02</span> items
-                      </div>
-
-                      <div class="text">
-                        Standards for the AnQ partner network.
-                      </div>
-
-                      <ul class="features-list">
-
-                        <li>
-                          <i class="fa-solid fa-check"></i>
-                          Customer support
-                        </li>
-
-                        <li>
-                          <i class="fa-solid fa-check"></i>
-                          Fair competition
-                        </li>
-
-                      </ul>
-
-                      <a
-                        href="#apply"
-                        class="theme-btn btn-style-three"
-                      >
-                        Become a Partner
-                        <i class="fa-light fa-arrow-up-right"></i>
-                      </a>
-
+                    <div class="anq-result-item">
+                      <strong>Fair network</strong>
+                      <span>Support and fair competition keep the platform balanced.</span>
                     </div>
 
                   </div>
@@ -3470,14 +4358,24 @@ Pricing
       </div>
 
 
-      <div
-        class="text-center mt-5 wow fadeInUp"
-        data-wow-delay="400ms"
-      >
+      <div class="anq-quote-bottom-note wow fadeInUp" data-wow-delay="400ms">
 
-        <div class="h3">
-          Better information creates better quotes.
+        <div>
+          <div class="h3">
+            Better information creates better quotes.
+          </div>
+          <p>
+            Join AnQ to receive structured move details and quote with more confidence.
+          </p>
         </div>
+
+        <a
+          href="#apply"
+          class="theme-btn btn-style-three"
+        >
+          Become a Partner
+          <i class="fa-light fa-arrow-up-right"></i>
+        </a>
 
       </div>
 
